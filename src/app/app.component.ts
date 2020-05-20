@@ -6,21 +6,21 @@ import { User, Role } from './JWT-ROLE/_models';
 
 @Component({ selector: 'app', templateUrl: 'app.component.html' })
 export class AppComponent {
-    currentUser: User;
+    // currentUser: User;
 
     constructor(
-        private router: Router,
-        private authenticationService: AuthenticationService
+        // private router: Router,
+        // private authenticationService: AuthenticationService
     ) {
-        this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
+        // this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
     }
-
-    get isAdmin() {
-        return this.currentUser && this.currentUser.role === Role.Admin;
-    }
-
-    logout() {
-        this.authenticationService.logout();
-        this.router.navigate(['/login']);
-    }
+    //
+    // get isAdmin() {
+    //     return this.currentUser && this.currentUser.role === Role.Admin;
+    // }
+    //
+    // logout() {
+    //     this.authenticationService.logout();
+    //     this.router.navigate(['/signin']);
+    // }
 }

@@ -25,9 +25,13 @@
       </form>
     </div>
     <div class="sub-header-right">
-      <ul>
+      <ul *ngIf="!currentUser">
         <li><a routerLink="signin">Đăng Nhập</a></li>
         <li><a routerLink="register">Đăng Ký</a></li>
+      </ul>
+      <ul *ngIf="currentUser">
+        <li><a routerLink="/">{{currentUser.username}}</a></li>
+        <li><a (click)="logout()">Đăng Xuất</a></li>
       </ul>
     </div>
     <div class="clear"> </div>
