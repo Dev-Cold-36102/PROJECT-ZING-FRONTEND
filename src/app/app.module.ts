@@ -16,6 +16,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {appRoutingModule} from './app.routing';
 import { JwtInterceptor, ErrorInterceptor } from './JWT-ROLE/_helpers';
+import {JwPaginationComponent} from 'jw-angular-pagination';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { JwtInterceptor, ErrorInterceptor } from './JWT-ROLE/_helpers';
     FooterComponent,
     IndexComponent,
     SigninComponent,
-    RegisterComponent
+    RegisterComponent,
+    JwPaginationComponent
   ],
   imports: [
     BrowserModule,

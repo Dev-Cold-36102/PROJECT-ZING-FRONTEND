@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
     this.registerFrom = new FormGroup({
       email: new FormControl('', [Validators.required,
         Validators.email]),
-      userName: new FormControl('', [Validators.required,
+      username: new FormControl('', [Validators.required,
         Validators.minLength(6), Validators.maxLength(45)]
       ),
       password: new FormControl('', [Validators.required,
@@ -34,15 +34,15 @@ export class RegisterComponent implements OnInit {
   onSubmit(registerFrom: FormGroup) {
     const users: Users = registerFrom.value;
     const regex = '^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$';
-    if (users.userName.length < 6 || users.userName.length > 45){
+    if (users.username.length < 6 || users.username.length > 45) {
       alert('Tài khoản có độ dài từ 6 tới 45 kí tự');
       return false;
     }
-    if (users.password.length < 6 || users.password.length > 45 ){
+    if (users.password.length < 6 || users.password.length > 45 ) {
       alert('password có độ dài từ 6 tới 45 kí tự');
       return false;
     }
-    if (users.email.length < 6 || users.email.length > 45 || !users.email.match(regex)){
+    if (users.email.length < 6 || users.email.length > 45 || !users.email.match(regex)) {
       alert('email Sai Định Dạng');
       return false;
     }

@@ -10,12 +10,12 @@ const routes: Routes = [
   {
     path: '',
     component: IndexComponent,
-    canActivate: [AuthGuard]
+    // canActivate: [AuthGuard]
   },
   {
     path: 'register',
     component: RegisterComponent,
-    canActivate: [AuthGuard]
+    // canActivate: [AuthGuard]
 
   },
   {

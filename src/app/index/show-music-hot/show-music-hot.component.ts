@@ -9,7 +9,7 @@ import {Song} from '../../_service_not_authen/song';
 export class ShowMusicHotComponent implements OnInit {
 
   constructor() { }
-  @Input() songs: Song[];
+  @Input() songsHot: Song[];
 
   ngOnInit(): void {
   }
