@@ -9,8 +9,8 @@ import {SigninComponent} from './signin/signin.component';
 const routes: Routes = [
   {
     path: '',
-    component: IndexComponent
-    // canActivate: [AuthGuard]
+    component: IndexComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'register',
