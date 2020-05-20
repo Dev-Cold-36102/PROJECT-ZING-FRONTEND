@@ -1,0 +1,20 @@
+﻿<!-- nav -->
+<app-nav-bar></app-nav-bar>
+<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="/">Home</a>
+        <a class="nav-item nav-link" routerLink="/admin" *ngIf="isAdmin">Admin</a>
+<!--        <a class="nav-item nav-link" routerLink="/test" >Test</a>-->
+        <a class="nav-item nav-link" (click)="logout()">Logout</a>
+    </div>
+</nav>
+<!--<button class="btn" routerLink="test">TEST</button>-->
+
+<!-- main app container -->
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
+
+<app-footer></app-footer>
+
+<!-- credits -->
