@@ -281,11 +281,13 @@ body{
 }
 .images_1_of_5  img{
 	max-width:100%;
+	height: 190px;
 	display:block;
 	margin: 0 auto;
 }
 .images_1_of_5  h3{
 	display: block;
+	height: 45px;
 	padding: 0.5em 0 0.2em 0;
 	font-family: 'Open Sans', sans-serif;
 	font-size:0.875em;
@@ -296,6 +298,7 @@ body{
 .images_1_of_5  p {
 	font-size:0.8125em;
 	color: #989898;
+	height: 35px;
 	line-height: 1.6em;
 	font-family : verdana, arial, helvetica, helve, sans-serif;
 }

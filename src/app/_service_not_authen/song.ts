@@ -9,7 +9,7 @@
   downloadSong: number;
   commendSong?: string;
    author: string;
-   link: string;
+   linkSong: string;
    category: string;
    idSinger: number;
    idAlbum: number;

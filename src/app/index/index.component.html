@@ -2,10 +2,10 @@
 <app-slide></app-slide>
 <div class="content">
   <div class="products-box">
-    <app-show-music-hot [songs]="hitSongs"></app-show-music-hot>
+    <app-show-music-hot [hitSongs]="hitSongs"></app-show-music-hot>
     <div class="clear"></div>
     <app-album-hot></app-album-hot>
-    <app-music-new></app-music-new>
+    <app-music-new [dateSongNew]="daySongs"></app-music-new>
   </div>
 </div>
 <div class="clear"></div>

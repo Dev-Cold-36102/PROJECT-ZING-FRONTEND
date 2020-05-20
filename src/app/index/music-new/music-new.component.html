@@ -1,12 +1,12 @@
 <div class="products products-secondbox">
   <h5><span>Nhạc Mới Nhất</span> </h5>
   <div class="section group">
-    <div class="grid_1_of_5 images_1_of_5">
-      <img src="assets/images/a9.jpg">
-      <h3>Lorem Ipsum is simply </h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, in reprehenderit.</p>
+    <div class="grid_1_of_5 images_1_of_5" *ngFor="let song of dateSongNew">
+      <img src="{{song.imageSong}}">
+      <h3>{{song.nameSong}} </h3>
+      <p>{{song.nameSong + song.author}}</p>
       <div>
-        <audio src="assets/audio/dummy-audio.mp3" controls style="width: 100%"></audio>
+        <audio src="{{song.linkSong}}" controls style="width: 100%"></audio>
       </div>
       <div class="button"><span><a href="singlepage.html">Read More</a></span></div>
     </div>
