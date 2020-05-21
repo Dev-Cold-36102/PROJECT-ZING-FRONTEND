@@ -15,37 +15,39 @@ import {RegisterComponent} from './register/register.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {appRoutingModule} from './app.routing';
-import { JwtInterceptor, ErrorInterceptor } from './JWT-ROLE/_helpers';
+import {JwtInterceptor, ErrorInterceptor} from './JWT-ROLE/_helpers';
+import {CreateSongComponent} from './create-song/create-song.component';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavBarComponent,
-    SlideComponent,
-    ShowMusicHotComponent,
-    AlbumHotComponent,
-    MusicNewComponent,
-    FooterComponent,
-    IndexComponent,
-    SigninComponent,
-    RegisterComponent
-  ],
-  imports: [
-    BrowserModule,
-    ReactiveFormsModule,
-    FormsModule,
-    HttpClientModule,
-    appRoutingModule
-  ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS, useClass:
-      JwtInterceptor, multi: true
-    },
-    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        NavBarComponent,
+        SlideComponent,
+        ShowMusicHotComponent,
+        AlbumHotComponent,
+        MusicNewComponent,
+        FooterComponent,
+        IndexComponent,
+        SigninComponent,
+        RegisterComponent
+        ,
+        CreateSongComponent],
+    imports: [
+        BrowserModule,
+        ReactiveFormsModule,
+        FormsModule,
+        HttpClientModule,
+        appRoutingModule
+    ],
+    providers: [
+        {
+            provide: HTTP_INTERCEPTORS, useClass:
+            JwtInterceptor, multi: true
+        },
+        {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }
