@@ -9,5 +9,5 @@ export interface Song {
     listenSong: string;
     downloadSong: string;
     commendSong?: string;////;;
-    commendSong1: string;
+    commendSong2: string;
 }
