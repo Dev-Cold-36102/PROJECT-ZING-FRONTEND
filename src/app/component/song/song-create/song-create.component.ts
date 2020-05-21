@@ -17,7 +17,7 @@ export class SongCreateComponent implements OnInit, OnDestroy {
   imageSong: string;
   downloadSong: string;
   dateSong: string;
-  likeSong: string;
+  likeSong: number;
   listenSong: string;
   commendSong: string;
   linkSong: string;
