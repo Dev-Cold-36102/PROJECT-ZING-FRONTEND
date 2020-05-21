@@ -21,7 +21,7 @@ export class CreateSongComponent implements OnInit {
         this.songForm = new FormGroup({
             nameSong: new FormControl(),
             infoSong: new FormControl(),
-            imageSong: File,
+            imageSong: FormControl.value,
             dateSong: new FormControl(new Date()),
             likeSong: new FormControl(0),
             listenSong: new FormControl(0),
