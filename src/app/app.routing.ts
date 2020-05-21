@@ -22,6 +22,11 @@ const routes: Routes = [
     path: 'signin',
     component: SigninComponent
   },
+  // {
+  //   path: 'admin',
+  //   component: AdminComponent,
+  //   data: {roles: [Role.Admin]}
+  // },
   // otherwise redirect to home
   {path: '**', redirectTo: ''}
 ];
