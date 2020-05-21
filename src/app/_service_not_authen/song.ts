@@ -8,6 +8,5 @@ export interface Song {
     likeSong: string;
     listenSong: string;
     downloadSong: string;
-    commendSong?: string;////;;
-    commendSong2: string;
+    commendSong?: string;
 }
