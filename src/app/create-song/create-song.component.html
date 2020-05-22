@@ -1,0 +1,72 @@
+<div class="ngContainer">
+    <div class="card">
+        <h4 class="card-header">Create New Song</h4>
+        <div class="card-body">
+            <form [formGroup]="songForm" (ngSubmit)="submit()">
+                <div class="form-group">
+                    <p for="nameSong">Name</p>
+                    <input type="text" id="nameSong" formControlName="nameSong" class="form-control"/>
+                    <!--                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">-->
+                    <!--                        <div *ngIf="f.username.errors.required">Username is required</div>-->
+                    <!--                    </div>-->
+                </div>
+                <div class="form-group">
+                    <p for="info">Information</p>
+                    <input id="info" type="text" formControlName="infoSong" class="form-control"/>
+                    <!--                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">-->
+                    <!--                        <div *ngIf="f.password.errors.required">Password is required</div>-->
+                    <!--                    </div>-->
+                </div>
+                <div class="form-group">
+                    <p for="imageSong">Image</p>
+                    <input id="imageSong" type="file" class="form-control" (input)="onChangeImage($event)"/>
+                </div>
+                <div class="form-group">
+                    <p for="date">Date</p>
+                    <input id="date" type="date" formControlName="dateSong" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <p for="likeSong">Likes</p>
+                    <input id="likeSong" type="number" formControlName="likeSong" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <p for="listenSong">Amount of Listen</p>
+                    <input id="listenSong" type="number" formControlName="listenSong" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <p for="downloadSong">Downloads</p>
+                    <input id="downloadSong" type="number" formControlName="downloadSong" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <p for="commendSong">Comment</p>
+                    <input id="commendSong" type="text" formControlName="commendSong" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <p for="category">Category</p>
+                    <input id="category" type="text" formControlName="category" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <p for="author">Author</p>
+                    <input id="author" type="text" formControlName="author" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <p for="linkSong">File Audio</p>
+                    <input id="linkSong" type="file"  class="form-control" (input)="onChangeAudio($event)"/>
+                </div>
+                <div class="form-group">
+                    <p for="author">Singer</p>
+                    <input id="singer" type="text" formControlName="singer" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <p for="author">Album</p>
+                    <input id="album" type="text" formControlName="album" class="form-control"/>
+                </div>
+                <button class="btn btn-primary">
+                    <span class="spinner-border spinner-border-sm mr-1"></span>
+                    Login
+                </button>
+                <!--                <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>-->
+            </form>
+        </div>
+    </div>
+</div>            

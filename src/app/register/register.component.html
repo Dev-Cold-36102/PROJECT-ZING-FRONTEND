@@ -7,29 +7,29 @@
             (ngSubmit)="onSubmit(registerFrom)">
         <div class="form-group">
           <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-          <input type="text" name="username" id="name" placeholder="userName" formControlName="userName">
+          <input type="text" name="username" id="name" placeholder="userName" formControlName="username">
           <small id="userName" class="form-text text-muted" style="color: red"
-            *ngIf="registerFrom.get('userName') && registerFrom.get('userName').touched">Tài khoản ít nhất 6 kí tự và
+            *ngIf="registerFrom.get('username').errors && registerFrom.get('username').touched">Tài khoản ít nhất 6 kí tự và
             nhiều nhất 45.</small>
         </div>
         <div class="form-group">
           <label for="email"><i class="zmdi zmdi-email"></i></label>
           <input type="email" name="email" id="email" placeholder="Your Email" formControlName="email">
           <small id="emailHelp" class="form-text text-muted" style="color: red"
-                 *ngIf="registerFrom.get('email') && registerFrom.get('email').touched">Email không đúng địn dạng (abcd12@gmail.com).</small>
+                 *ngIf="registerFrom.get('email').errors && registerFrom.get('email').touched">Email không đúng địn dạng (abcd12@gmail.com).</small>
         </div>
         <div class="form-group">
           <label for="pass"><i class="zmdi zmdi-lock"></i></label>
           <input formControlName="password" type="password" name="password" id="pass" placeholder="Password">
           <small id="passHelp" class="form-text text-muted" style="color: red"
-                 *ngIf="registerFrom.get('password') && registerFrom.get('password').touched">Mật Khẩu ít nhất 6 kí tự và
+                 *ngIf="registerFrom.get('password').errors && registerFrom.get('password').touched">Mật Khẩu ít nhất 6 kí tự và
             nhiều nhất 45.</small>
         </div>
         <div class="form-group">
           <label for="re_pass"><i class="zmdi zmdi-lock-outline"></i></label>
           <input type="password" formControlName="repass" name="repass" id="re_pass" placeholder="Repeat your password">
           <small id="userHelp" class="form-text text-muted" style="color: red"
-                 *ngIf="registerFrom.get('repass') && registerFrom.get('repass').touched"> Không được để trống, Nhập lại mật khẩu phải giống với mật khẩu.</small>
+                 *ngIf="registerFrom.get('repass').errors && registerFrom.get('repass').touched"> Không được để trống, Nhập lại mật khẩu phải giống với mật khẩu.</small>
         </div>
         <div class="form-group">
           <input type="checkbox" name="agree-term" id="agree-term" class="agree-term">
