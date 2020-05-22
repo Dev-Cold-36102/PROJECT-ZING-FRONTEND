@@ -5,7 +5,7 @@ import {Role} from './JWT-ROLE/_models';
 import {IndexComponent} from './index/index.component';
 import {RegisterComponent} from './register/register.component';
 import {SigninComponent} from './signin/signin.component';
-import {CreateSongComponent} from './create-song/create-song.component';
+import { CreateSongComponent } from './create-song/create-song.component';
 
 const routes: Routes = [
     {

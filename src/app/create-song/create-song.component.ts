@@ -22,7 +22,8 @@ export class CreateSongComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.songForm = new FormGroup({
+        this.songForm = new FormGroup(
+            {
             nameSong: new FormControl('name'),
             infoSong: new FormControl('name'),
             dateSong: new FormControl(new Date()),
@@ -40,7 +41,7 @@ export class CreateSongComponent implements OnInit {
 
     submit() {
         const song: any = this.songForm.value;
-        // console.log(song.nameSong);
+        console.log(song.nameSong);
         this.formSongData.append('nameSong', song.nameSong);
         this.formSongData.append('infoSong', song.infoSong);
         this.formSongData.append('dateSong', song.dateSong);
@@ -69,9 +70,10 @@ export class CreateSongComponent implements OnInit {
 
     creatSong(song: any) {
         // console.log(song.get('linkSong'));
-        this.httpClient.post(`${environment.apiUrl}/create-song`, song).subscribe((result) => {
+        this.httpClient.post(`${environment.apiUrl}/create-song`, song)
+            .subscribe((result) => {
             console.log('Thêm bai hat thành công');
-            // alert('ADD SUCCESS!');
+            alert('ADD SUCCESS!');
         }, (error) => {
             console.log('Gặp lỗi khi thêm song');
             console.error(error);
