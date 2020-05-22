@@ -4,16 +4,16 @@ import {Users} from './users';
 
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class UsersService {
-  url = 'http://localhost:8080/';
+    url = 'http://localhost:8080/';
+    message = '';
 
-  constructor(private httpClient: HttpClient) {
-  }
+    constructor(private httpClient: HttpClient) {
+    }
 
-  saveUser(user: Users) {
-    this.httpClient.post(this.url + 'api/register', user).subscribe();
-  }
-
+     saveUser(user: Users) {
+        return this.httpClient.post(this.url + 'api/register', user);
+    }
 }

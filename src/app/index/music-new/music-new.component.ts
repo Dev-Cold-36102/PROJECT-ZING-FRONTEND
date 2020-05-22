@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Song} from '../../_service_not_authen/song';
 
 @Component({
   selector: 'app-music-new',
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class MusicNewComponent implements OnInit {
 
   constructor() { }
+  @Input() songNew: Song [];
 
   ngOnInit(): void {
   }

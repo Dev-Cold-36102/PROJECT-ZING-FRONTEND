@@ -15,6 +15,7 @@ import {RegisterComponent} from './register/register.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {appRoutingModule} from './app.routing';
+// import {JwPaginationComponent} from 'jw-angular-pagination';
 import {JwtInterceptor, ErrorInterceptor} from './JWT-ROLE/_helpers';
 import {CreateSongComponent} from './create-song/create-song.component';
 
@@ -30,9 +31,10 @@ import {CreateSongComponent} from './create-song/create-song.component';
         FooterComponent,
         IndexComponent,
         SigninComponent,
-        RegisterComponent
-        ,
-        CreateSongComponent],
+        RegisterComponent,
+        // JwPaginationComponent,
+        CreateSongComponent
+    ],
     imports: [
         BrowserModule,
         ReactiveFormsModule,

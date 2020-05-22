@@ -281,6 +281,7 @@ body{
 }
 .images_1_of_5  img{
 	max-width:100%;
+	height: 190px;
 	display:block;
 	margin: 0 auto;
 }
@@ -290,12 +291,14 @@ body{
 	font-family: 'Open Sans', sans-serif;
 	font-size:0.875em;
 	color: #FFF;
+	height: 45px;
 	border-right: 1px solid rgba(151, 151, 151, 0.11);
 	text-transform: uppercase;
 }
 .images_1_of_5  p {
 	font-size:0.8125em;
 	color: #989898;
+	height: 35px;
 	line-height: 1.6em;
 	font-family : verdana, arial, helvetica, helve, sans-serif;
 }

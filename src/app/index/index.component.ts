@@ -11,18 +11,33 @@ export class IndexComponent implements OnInit {
   songs: Song[] = [];
   keyword = '';
   hitSongs: Song [] = [];
+  daySongs: Song [] = [];
+  pageOfItems: Array<any>;
+
 
 
   constructor(private songService: SongService) {
     this.getSongFromApi();
-    this.sortByView();
   }
 
   ngOnInit(): void {
   }
-  getSongFromApi(){
+  getSongFromApi() {
     this.songService.fetchListSongApi().subscribe(song => {
       this.songs = song;
+      console.log('dang lay du lieu tu api');
+      console.log(song);
+      this.hitSongs = song;
+      this.hitSongs.sort((a, b) => {
+        console.log('sap xep');
+        return b.listenSong - a.listenSong;
+      });
+      this.daySongs = song;
+      this.daySongs.sort((a, b) => {
+        console.log('theo ngay');
+        // @ts-ignore
+        return new Date(b.dateSong) - new Date(a.dateSong);
+      });
     });
   }
   searchSongByName() {
@@ -33,9 +48,8 @@ export class IndexComponent implements OnInit {
       this.songs = this.songService.searchNewsByTitle(this.keyword);
     }
   }
-  sortByView() {
-    // @ts-ignore
-    this.hitSongs = this.songs.sort((a: Song['view'], b: Song['view']) =>  b - a);
+  onChangePage(pageOfItems: Array<any>) {
+    // update current page of items
+    this.pageOfItems = pageOfItems;
   }
-
 }

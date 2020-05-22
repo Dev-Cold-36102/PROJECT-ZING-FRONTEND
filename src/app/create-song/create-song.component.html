@@ -19,7 +19,7 @@
                 </div>
                 <div class="form-group">
                     <p for="imageSong">Image</p>
-                    <input id="imageSong" type="file" formControlName="imageSong" class="form-control"/>
+                    <input id="imageSong" type="file" class="form-control" (input)="onChangeImage($event)"/>
                 </div>
                 <div class="form-group">
                     <p for="date">Date</p>
@@ -51,7 +51,15 @@
                 </div>
                 <div class="form-group">
                     <p for="linkSong">File Audio</p>
-                    <input id="linkSong" type="file" formControlName="linkSong" class="form-control"/>
+                    <input id="linkSong" type="file"  class="form-control" (input)="onChangeAudio($event)"/>
+                </div>
+                <div class="form-group">
+                    <p for="author">Singer</p>
+                    <input id="singer" type="text" formControlName="singer" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <p for="author">Album</p>
+                    <input id="album" type="text" formControlName="album" class="form-control"/>
                 </div>
                 <button class="btn btn-primary">
                     <span class="spinner-border spinner-border-sm mr-1"></span>

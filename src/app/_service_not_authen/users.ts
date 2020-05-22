@@ -2,7 +2,7 @@ export interface Users {
   idUser?: number;
   fullName?: string;
   email: string;
-  userName: string;
+  username: string;
   password: string;
   repass?: string;
   phone?: string;
