@@ -42,8 +42,7 @@ export class SongCreateComponent implements OnInit, OnDestroy {
     // @ts-ignore
     const newSong = new Song(this.nameSong, this.infoSong
         , this.imageSong, this.downloadSong, this.author
-        , this.dateSong, this.likeSong, this.listenSong
-        , this.commendSong, this.linkSong, this.category);
+        , this.dateSong);
     this.subscription = this.songServiceService.addSong(newSong)
         .subscribe(
             (newData) => {
