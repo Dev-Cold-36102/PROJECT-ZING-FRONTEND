@@ -6,6 +6,7 @@ import {IndexComponent} from './index/index.component';
 import {RegisterComponent} from './register/register.component';
 import {SigninComponent} from './signin/signin.component';
 import { CreateSongComponent } from './create-song/create-song.component';
+import { CreatePlaylistComponent } from './create-playlist/create-playlist.component';
 
 const routes: Routes = [
     {
@@ -26,6 +27,10 @@ const routes: Routes = [
     {
         path: 'create-song',
         component: CreateSongComponent
+    },
+    {
+        path: 'create-playlist',
+        component: CreatePlaylistComponent
     },
     // otherwise redirect to home
     {path: '**', redirectTo: ''}

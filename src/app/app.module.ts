@@ -17,7 +17,8 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {appRoutingModule} from './app.routing';
 // import {JwPaginationComponent} from 'jw-angular-pagination';
 import {JwtInterceptor, ErrorInterceptor} from './JWT-ROLE/_helpers';
-import {CreateSongComponent} from './create-song/create-song.component';
+import {CreateSongComponent} from './create-song/create-song.component';;
+import { CreatePlaylistComponent } from './create-playlist/create-playlist.component'
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import {CreateSongComponent} from './create-song/create-song.component';
         SigninComponent,
         RegisterComponent,
         // JwPaginationComponent,
-        CreateSongComponent
+        CreateSongComponent,
+        CreatePlaylistComponent
     ],
     imports: [
         BrowserModule,
