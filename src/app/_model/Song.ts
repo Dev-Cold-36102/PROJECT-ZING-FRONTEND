@@ -6,8 +6,6 @@ export class Song {
 
     infoSong: string;
 
-    imageSong: File;
-
     dateSong: Date;
 
     likeSong: number;
@@ -22,5 +20,8 @@ export class Song {
 
     author: string;
 
-    linkSong: File;
+    idSinger: number;
+
+    idAlbum: number;
+
 }

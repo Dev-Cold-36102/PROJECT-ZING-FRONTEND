@@ -23,7 +23,7 @@ img{max-width:100%;}
 /*end reset*/
 /*---start-wrap----*/
 body{
-	background: url(../images/body-bg.png) repeat-x, url(../images/bg.png) #F8F8F8;
+	background: url(../other_image/body-bg.png) repeat-x, url(../other_image/bg.png) #F8F8F8;
 }
 .wrap{
 	width:80%;
@@ -57,7 +57,7 @@ body{
 	transition: all 0.3s ease;
 }
 .top-header-left ul li.active> a, .top-header-left ul li> a:hover {
-	background:url(../images/active.gif);
+	background:url(../other_image/active.gif);
 }
 /*----sub-header-----*/
 .sub-header {
@@ -79,7 +79,7 @@ body{
 	border: 1px inset #eee;
 }
 .sub-header-center input[type="submit"]{
-	background: url(../images/top-nav.png) repeat-x;
+	background: url(../other_image/top-nav.png) repeat-x;
 	border-bottom: 1px solid rgb(37, 37, 37);
 	padding: 11px 20px;
 	border:none;
@@ -140,7 +140,7 @@ body{
 	padding: 10px;
 	height: 12px;
 	float: left;
-	background: url(../images/search.png) left top no-repeat;
+	background: url(../other_image/search.png) left top no-repeat;
 	border: none;
 	outline: none;
 }
@@ -149,7 +149,7 @@ body{
 	padding: 0px 14px 0 13px;
 	display: block;
 	float: left;
-	background: url(../images/button.gif) left top repeat-x;
+	background: url(../other_image/button.gif) left top repeat-x;
 	color: #fff;
 	text-decoration: none;
 	text-align: center;
@@ -171,7 +171,7 @@ body{
 	float:left;
 }
 .top-nav{
-	background: url(../images/top-nav.png) repeat-x;
+	background: url(../other_image/top-nav.png) repeat-x;
 	border-bottom: 1px solid rgb(37, 37, 37);
 	border-bottom: 2px solid #FC3019
 }
@@ -189,7 +189,7 @@ body{
 	-webkit-transition: 0.5s ease;
 }
 .top-nav li.active1> a, .top-nav li> a:hover {
-	background:url(../images/top-nav1.png);
+	background:url(../other_image/top-nav1.png);
 }
 /*-----.image-slider----*/
 .image-slider {
@@ -199,7 +199,7 @@ body{
 	float:right;
 	padding: 10px 20px;
 	display: block;
-	background: url(../images/head1.png)repeat-x;
+	background: url(../other_image/head1.png)repeat-x;
 	border: none;
 	font: bold 12px "Arial"!important;
 	color: #fff;
@@ -213,7 +213,7 @@ body{
 	border-radius:3em;
 }
 .button1:hover{
-	background: url(../images/head1h.png)repeat-x;
+	background: url(../other_image/head1h.png)repeat-x;
 }
 /*---products----*/
 .products-box {
@@ -228,8 +228,8 @@ body{
 	font-family: 'Open Sans', sans-serif;
 	font-weight: normal;
 	text-transform: uppercase;
-	background: url(../images/head1.png) repeat-x;
-	background: url(../images/top-nav.png) repeat-x;
+	background: url(../other_image/head1.png) repeat-x;
+	background: url(../other_image/top-nav.png) repeat-x;
 	border-bottom: 2px solid #FC3019;
 }
 .content {
@@ -319,7 +319,7 @@ body{
 .images_1_of_5 .button a{
 		padding: 8px 10px;
 		display: block;
-		background: url(../images/head1.png) repeat-x;
+		background: url(../other_image/head1.png) repeat-x;
 		border: none;
 		font: bold 12px "Arial"!important;
 		color: #fff;
@@ -330,7 +330,7 @@ body{
 		-webkit-transition: background 0.5s ease;
 }
 .images_1_of_5 .button a:hover{
-	background: url(../images/head1h.png)repeat-x;
+	background: url(../other_image/head1h.png)repeat-x;
 	text-decoration: none !important;
 	-moz-transition: background 0.2s ease;
 	-o-transition: background 0.2s ease;
@@ -538,8 +538,8 @@ body{
 	font-family: 'Open Sans', sans-serif;
 	font-weight: normal;
 	text-transform: uppercase;
-	background: url(../images/head1.png) repeat-x;
-	background: url(../images/top-nav.png) repeat-x;
+	background: url(../other_image/head1.png) repeat-x;
+	background: url(../other_image/top-nav.png) repeat-x;
 	border-bottom: 2px solid #FC3019;
 }
 .Cartires h5 span{
@@ -604,7 +604,7 @@ body{
 .cartire-grid-cartinfo a{
 	padding: 8px 10px;
 	display: inline-block;
-	background: url(../images/head1.png)repeat-x;
+	background: url(../other_image/head1.png)repeat-x;
 	border: none;
 	font: bold 12px "Arial"!important;
 	color: #fff;
@@ -616,7 +616,7 @@ body{
 	margin-bottom: 10px;
 }
 .cartire-grid-cartinfo a:hover{
-	background: url(../images/head1h.png)repeat-x;
+	background: url(../other_image/head1h.png)repeat-x;
 	text-decoration: none !important;
 	-moz-transition: background 0.2s ease;
 	-o-transition: background 0.2s ease;
@@ -716,7 +716,7 @@ body{
 .contact-form input[type="submit"]{
 	padding: 10px 20px;
 	display: block;
-	background: url(../images/head1.png)repeat-x;
+	background: url(../other_image/head1.png)repeat-x;
 	border: none;
 	font: bold 12px "Arial"!important;
 	color: #fff;
@@ -732,7 +732,7 @@ body{
 	border:none;
 }
 .contact-form input[type="submit"]:hover{
-	background: url(../images/head1h.png)repeat-x;
+	background: url(../other_image/head1h.png)repeat-x;
 	text-decoration: none !important;
 	-moz-transition: background 0.2s ease;
 	-o-transition: background 0.2s ease;
@@ -1016,7 +1016,7 @@ body{
 .product-description a{
 	padding: 8px 10px;
 	display: inline-block;
-	background: url(../images/head1.png) repeat-x;
+	background: url(../other_image/head1.png) repeat-x;
 	border: none;
 	font: bold 12px "Arial"!important;
 	color: #fff;
@@ -1027,7 +1027,7 @@ body{
 	-webkit-transition: background 0.5s ease;
 }
 .product-description a:hover{
-	background: url(../images/head1h.png) repeat-x;
+	background: url(../other_image/head1h.png) repeat-x;
 	text-decoration: none !important;
 	-moz-transition: background 0.2s ease;
 	-o-transition: background 0.2s ease;
@@ -1338,7 +1338,7 @@ body{
 .images_1_of_4 .button a{
   padding: 8px 10px;
   display: block;
-  background: url(../images/head1.png) repeat-x;
+  background: url(../other_image/head1.png) repeat-x;
   border: none;
   font: bold 12px "Arial"!important;
   color: #fff;
@@ -1349,7 +1349,7 @@ body{
   -webkit-transition: background 0.5s ease;
 }
 .images_1_of_4 .button a:hover{
-  background: url(../images/head1h.png)repeat-x;
+  background: url(../other_image/head1h.png)repeat-x;
   text-decoration: none !important;
   -moz-transition: background 0.2s ease;
   -o-transition: background 0.2s ease;

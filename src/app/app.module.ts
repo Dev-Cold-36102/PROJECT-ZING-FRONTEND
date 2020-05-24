@@ -15,9 +15,14 @@ import {RegisterComponent} from './register/register.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {appRoutingModule} from './app.routing';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {AutocompleteLibModule} from 'angular-ng-autocomplete';
+
+
 // import {JwPaginationComponent} from 'jw-angular-pagination';
 import {JwtInterceptor, ErrorInterceptor} from './JWT-ROLE/_helpers';
 import {CreateSongComponent} from './create-song/create-song.component';
+import {TestAutocompleteComponent} from './test-autocomplete/test-autocomplete.component';
 
 
 @NgModule({
@@ -34,13 +39,17 @@ import {CreateSongComponent} from './create-song/create-song.component';
         RegisterComponent,
         // JwPaginationComponent,
         CreateSongComponent
-    ],
+        ,
+        TestAutocompleteComponent],
     imports: [
         BrowserModule,
         ReactiveFormsModule,
         FormsModule,
         HttpClientModule,
-        appRoutingModule
+        appRoutingModule,
+        BrowserAnimationsModule,
+        AutocompleteLibModule
+        // AutocompleteLibModule
     ],
     providers: [
         {
@@ -48,6 +57,7 @@ import {CreateSongComponent} from './create-song/create-song.component';
             JwtInterceptor, multi: true
         },
         {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+
     ],
     bootstrap: [AppComponent]
 })

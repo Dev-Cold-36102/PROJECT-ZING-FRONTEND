@@ -5,7 +5,8 @@ import {Role} from './JWT-ROLE/_models';
 import {IndexComponent} from './index/index.component';
 import {RegisterComponent} from './register/register.component';
 import {SigninComponent} from './signin/signin.component';
-import { CreateSongComponent } from './create-song/create-song.component';
+import {CreateSongComponent} from './create-song/create-song.component';
+import {TestAutocompleteComponent} from './test-autocomplete/test-autocomplete.component';
 
 const routes: Routes = [
     {
@@ -26,6 +27,10 @@ const routes: Routes = [
     {
         path: 'create-song',
         component: CreateSongComponent
+    },
+    {
+        path: 'test-autocpmlete',
+        component: TestAutocompleteComponent
     },
     // otherwise redirect to home
     {path: '**', redirectTo: ''}

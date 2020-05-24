@@ -11,6 +11,9 @@ export class MusicNewComponent implements OnInit {
   constructor() { }
   @Input() songNew: Song [];
 
+  srcImageSong = 'assets/images/song/';
+  srcAudioSong = 'assets/mp3Link/';
+
   ngOnInit(): void {
   }
 
