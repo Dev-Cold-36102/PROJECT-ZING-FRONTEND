@@ -3,6 +3,9 @@ import {FormControl, FormGroup} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {Song} from '../_model/Song';
 import {environment} from '@environments/environment';
+import {Singer} from '../_model/Singer';
+import {SongService} from '../_service_not_authen/song.service';
+import {Album} from '../_model/Album';
 
 
 @Component({
@@ -12,19 +15,35 @@ import {environment} from '@environments/environment';
 })
 export class CreateSongComponent implements OnInit {
 
+
     songForm: FormGroup;
+    nameSong: string;
+    keywordSinger = 'nameSinger';
+    keywordAlbum = 'nameAlbum';
+    srcImageSinger = 'assets/images/singer/';
+    srcAlbum = 'assets/images/album/';
+
+
     // imageSong: any = File;
     formSongData: FormData;
+    listSinger: Singer[] = [];
+    listSingerName: string[] = [];
+    listAlbum: Album[] = [];
+    isLoadingResult: boolean;
 
 
-    constructor(private httpClient: HttpClient) {
-
+    constructor(private httpClient: HttpClient, private songService: SongService) {
     }
 
     ngOnInit() {
+        this.getAllSinger();
+        this.getAllAlbum();
+
+        console.log(this.listSingerName);
         this.songForm = new FormGroup({
             nameSong: new FormControl('name'),
             infoSong: new FormControl('name'),
+            imageSong: new FormControl(),
             dateSong: new FormControl(new Date()),
             likeSong: new FormControl(0),
             listenSong: new FormControl(0),
@@ -32,8 +51,9 @@ export class CreateSongComponent implements OnInit {
             commendSong: new FormControl(0),
             category: new FormControl('name'),
             author: new FormControl('name'),
-            singer: new FormControl('name'),
-            album: new FormControl('name'),
+            linkSong: new FormControl(),
+            singer: new FormControl(),
+            album: new FormControl(),
         });
         this.formSongData = new FormData();
     }
@@ -50,11 +70,13 @@ export class CreateSongComponent implements OnInit {
         this.formSongData.append('commendSong', song.commendSong);
         this.formSongData.append('category', song.category);
         this.formSongData.append('author', song.author);
-        this.formSongData.append('singer', song.singer);
-        this.formSongData.append('album', song.album);
+        this.formSongData.append('singer', song.singer.nameSinger);
+        this.formSongData.append('album', song.album.nameAlbum);
         // console.log(song.imageSong.value);
 
         this.creatSong(this.formSongData);
+        // window.location.reload();
+
     }
 
     onChangeImage(event) {
@@ -77,5 +99,42 @@ export class CreateSongComponent implements OnInit {
             console.error(error);
         });
     }
+
+    getAllSinger() {
+        this.songService.fetchListSingerApi().subscribe((newItem) => {
+            this.listSinger = newItem;
+        }, error => {
+            console.log('SongService.getAllSingerFromAPI() :: Gặp lỗi khi lấy danh sách ca si từ Back and');
+        });
+    }
+
+    getAllAlbum() {
+        this.songService.fetchListAlbumApi().subscribe((newItem) => {
+            this.listAlbum = newItem;
+        }, error => {
+            console.log('SongService.getAllAlbumFromAPI() :: Gặp lỗi khi lấy danh sách album từ Back and');
+        });
+    }
+
+    selectEvent(item) {
+        // do something with selected item
+    }
+
+    onChangeSearch(val: string) {
+        // fetch remote data from here
+        // And reassign the 'data' which is binded to 'data' property.
+    }
+
+    onFocused(e) {
+        // do something when input is focused
+    }
+
+    // showSinger() {
+    //     console.log('value:' + this.nameSinger);
+    // }
+    //
+    // showAlbum() {
+    //     console.log('value:' + this.nameAlbum);
+    // }
 
 }
