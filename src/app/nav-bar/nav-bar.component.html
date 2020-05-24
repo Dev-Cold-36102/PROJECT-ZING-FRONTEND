@@ -43,9 +43,9 @@
       <li><a href="favorites.html">Favourites</a></li>
       <li><a href="artists.html">Artists</a></li>
       <li><a href="specials.html">Specials</a></li>
-      <li><a href="specials.html">Recent-albums</a></li>
-      <li><a href="contact.html">Feedback</a></li>
-      <li><a routerLink="create-song">create-song</a></li>
+      <li *ngIf="currentUser"><a href="specials.html">Recent-albums</a></li>
+      <li *ngIf="currentUser"><a routerLink="create-playlist">Create-playlist</a></li>
+      <li *ngIf="currentUser"><a routerLink="create-song">create-song</a></li>
       <div class="clear"> </div>
     </ul>
   </div>
