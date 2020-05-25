@@ -1,12 +1,11 @@
 import {FormControl} from '@angular/forms';
 import {FileUploader} from 'ng2-file-upload';
 
+
 export class Song {
     nameSong: string;
 
     infoSong: string;
-
-    imageSong: File;
 
     dateSong: Date;
 
@@ -22,5 +21,8 @@ export class Song {
 
     author: string;
 
-    linkSong: File;
+    idSinger: number;
+
+    idAlbum: number;
+
 }
