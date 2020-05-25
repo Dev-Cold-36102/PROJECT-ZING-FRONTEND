@@ -8,8 +8,14 @@ import {Song} from '../../_service_not_authen/song';
 })
 export class ShowMusicHotComponent implements OnInit {
 
-  constructor() { }
+
+  constructor() {
+  }
+
   @Input() songsHot: Song[];
+
+  srcImageSong = 'assets/images/song/imageSong/';
+  srcAudioSong = 'assets/images/song/mp3Song/';
 
   ngOnInit(): void {
   }

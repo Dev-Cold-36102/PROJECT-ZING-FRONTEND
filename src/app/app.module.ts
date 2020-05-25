@@ -18,6 +18,8 @@ import {appRoutingModule} from './app.routing';
 // import {JwPaginationComponent} from 'jw-angular-pagination';
 import {JwtInterceptor, ErrorInterceptor} from './JWT-ROLE/_helpers';
 import {CreateSongComponent} from './create-song/create-song.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 
 
 @NgModule({
@@ -40,7 +42,9 @@ import {CreateSongComponent} from './create-song/create-song.component';
         ReactiveFormsModule,
         FormsModule,
         HttpClientModule,
-        appRoutingModule
+        appRoutingModule,
+        BrowserAnimationsModule,
+        AutocompleteLibModule
     ],
     providers: [
         {
