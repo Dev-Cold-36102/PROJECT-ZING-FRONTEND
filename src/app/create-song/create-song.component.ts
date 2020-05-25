@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
-import {Song} from '../_model/Song';
 import {environment} from '@environments/environment';
 import {Singer} from '../_model/Singer';
 import {SongService} from '../_service_not_authen/song.service';
@@ -22,7 +21,7 @@ export class CreateSongComponent implements OnInit {
     keywordAlbum = 'nameAlbum';
     srcImageSinger = 'assets/images/singer/';
     srcAlbum = 'assets/images/album/';
-
+    isCannotCreate = true;
 
     // imageSong: any = File;
     formSongData: FormData;
@@ -41,19 +40,19 @@ export class CreateSongComponent implements OnInit {
 
         console.log(this.listSingerName);
         this.songForm = new FormGroup({
-            nameSong: new FormControl('name'),
-            infoSong: new FormControl('name'),
+            nameSong: new FormControl('', Validators.required),
+            infoSong: new FormControl('', Validators.required),
             imageSong: new FormControl(),
-            dateSong: new FormControl(new Date()),
-            likeSong: new FormControl(0),
-            listenSong: new FormControl(0),
-            downloadSong: new FormControl(0),
-            commendSong: new FormControl(0),
-            category: new FormControl('name'),
-            author: new FormControl('name'),
-            linkSong: new FormControl(),
-            singer: new FormControl(),
-            album: new FormControl(),
+            dateSong: new FormControl(new Date(), Validators.required),
+            likeSong: new FormControl(0, Validators.required),
+            listenSong: new FormControl(0, Validators.required),
+            downloadSong: new FormControl(0, Validators.required),
+            commendSong: new FormControl(0, Validators.required),
+            category: new FormControl('', Validators.required),
+            author: new FormControl('', Validators.required),
+            linkSong: new FormControl('', Validators.required),
+            singer: new FormControl('', Validators.required),
+            album: new FormControl('', Validators.required),
         });
         this.formSongData = new FormData();
     }
@@ -120,21 +119,35 @@ export class CreateSongComponent implements OnInit {
         // do something with selected item
     }
 
-    onChangeSearch(val: string) {
-        // fetch remote data from here
-        // And reassign the 'data' which is binded to 'data' property.
+    onChangeSearchSinger(val: string) {
+        this.checkCanCreate();
     }
 
+    onChangeSearchAlbum(val: string) {
+        this.checkCanCreate();
+
+    }
+
+
+    checkCanCreate() {
+        // console.log(this.songForm.value.singer);
+        const singer: any = this.songForm.value.singer;
+        const album: any = this.songForm.value.album;
+
+
+        if (this.listAlbum.includes(album) && this.listSinger.includes(singer)) {
+            this.isCannotCreate = false;
+
+        } else {
+            this.isCannotCreate = true;
+        }
+    }
+
+
     onFocused(e) {
+        console.log('focus0');
         // do something when input is focused
     }
 
-    // showSinger() {
-    //     console.log('value:' + this.nameSinger);
-    // }
-    //
-    // showAlbum() {
-    //     console.log('value:' + this.nameAlbum);
-    // }
 
 }
