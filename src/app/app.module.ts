@@ -24,7 +24,6 @@ import {JwtInterceptor, ErrorInterceptor} from './JWT-ROLE/_helpers';
 import {CreateSongComponent} from './create-song/create-song.component';
 import {TestAutocompleteComponent} from './test-autocomplete/test-autocomplete.component';
 
-
 @NgModule({
     declarations: [
         AppComponent,
