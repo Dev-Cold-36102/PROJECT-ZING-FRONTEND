@@ -21,11 +21,11 @@ import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 
 // import {JwPaginationComponent} from 'jw-angular-pagination';
 import {JwtInterceptor, ErrorInterceptor} from './JWT-ROLE/_helpers';
-import {CreateSongComponent} from './create-song/create-song.component';
-import {TestAutocompleteComponent} from './test-autocomplete/test-autocomplete.component';;
-import { PlaylistComponent } from './playlist/playlist/playlist.component'
-;
-import { PlaylistComponent } from './playlist/playlist.component'
+import {TestAutocompleteComponent} from './test-autocomplete/test-autocomplete.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import {ViewDetailSongComponent} from './index/view-detail-song/view-detail-song.component';
+import {CreateSongComponent} from './CRUDSong/create-song/create-song.component';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -40,9 +40,9 @@ import { PlaylistComponent } from './playlist/playlist.component'
         RegisterComponent,
         // JwPaginationComponent,
         CreateSongComponent,
-        TestAutocompleteComponent,
-        PlaylistComponent
-    ],
+        ViewDetailSongComponent,
+        TestAutocompleteComponent],
+
     imports: [
         BrowserModule,
         ReactiveFormsModule,
@@ -50,8 +50,9 @@ import { PlaylistComponent } from './playlist/playlist.component'
         HttpClientModule,
         appRoutingModule,
         BrowserAnimationsModule,
+        AutocompleteLibModule,
+        NgxPaginationModule,
         AutocompleteLibModule
-        // AutocompleteLibModule
     ],
     providers: [
         {
