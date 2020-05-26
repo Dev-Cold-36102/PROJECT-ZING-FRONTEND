@@ -9,12 +9,13 @@ import {Singer} from '../../_model/Singer';
 import {Album} from '../../_model/Album';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {environment} from '@environments/environment';
-
+// @ts-ignore
 @Component({
     selector: 'app-edit-song',
     templateUrl: './edit-song.component.html',
     styleUrls: ['./edit-song.component.less']
 })
+// @ts-ignore
 export class EditSongComponent implements OnInit {
 
     currentUser: User;

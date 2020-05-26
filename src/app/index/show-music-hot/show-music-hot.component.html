@@ -14,7 +14,7 @@
                     <button type="button"
                             class="btn btn-success"
                             (click)="onViewSong(song)"
-                    >chi tiet
+                    >Chi tiết
                     </button>
                 </div>
             </div>
@@ -23,33 +23,6 @@
         </div>
         <pagination-controls (pageChange)="paging = $event"
                              style="float: contour"></pagination-controls>
-        <!--    <a class="button1" href="#">View all</a>-->
-        <div class="clear"></div>
-
-    </form>
-</div>
-
-<div class="products">
-    <h5><span>Top Nhạc Hot, Nghe Nghe Nhiều Nhất111 </span></h5>
-    <form *ngIf="songDetail">
-        <div class="section group">
-            <div>
-                <img src="{{srcImageSong+songDetail.imageSong}}" alt="image">
-                <h3>Tên bài hát: {{songDetail.nameSong}} </h3>
-                <h3>Tác giả: {{songDetail.author}} </h3>
-                <h3>Thể loại: {{songDetail.category}} </h3>
-                <h3>Lượt tải về: {{songDetail.downloadSong}} </h3>
-                <h3>Lượt like: {{songDetail.likeSong}} </h3>
-                <h3>ca si:{{songDetail.singer.nameSinger}} </h3>
-
-                <div>
-                    <audio src="{{srcAudioSong+songDetail.linkSong}}" controls style="width: 100%"></audio>
-                </div>
-
-            </div>
-
-
-        </div>
         <!--    <a class="button1" href="#">View all</a>-->
         <div class="clear"></div>
 

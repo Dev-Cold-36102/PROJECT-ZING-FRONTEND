@@ -8,6 +8,7 @@ import {CreateSongComponent} from './CRUDSong/create-song/create-song.component'
 import {TestAutocompleteComponent} from './test-autocomplete/test-autocomplete.component';
 import {ListSongOwnerComponent} from './CRUDSong/list-song-owner/list-song-owner.component';
 import {EditSongComponent} from './CRUDSong/edit-song/edit-song.component';
+import {ViewDetailSongComponent} from './index/view-detail-song/view-detail-song.component';
 
 const routes: Routes = [
     {
@@ -24,6 +25,10 @@ const routes: Routes = [
     {
         path: 'signin',
         component: SigninComponent
+    },
+    {
+        path: 'view-song',
+        component: ViewDetailSongComponent
     },
     {
         path: 'create-song',

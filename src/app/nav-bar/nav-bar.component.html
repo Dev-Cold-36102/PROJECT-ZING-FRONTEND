@@ -28,19 +28,27 @@
 
 
         <div class="ng-autocomplete search-bar">
-            <div class="search-btn">
-                <ng-autocomplete [data]="listSong" [searchKeyword]="keyWordSong"
-                                 (selected)='redirectViewSong()'
-                                 (inputChanged)='onFocused($event)'
-                                 (inputFocused)='onFocused($event)'
-                                 [itemTemplate]="itemTemplateSinger"
-                                 [notFoundTemplate]="notFoundTemplateSinger"
-                                 placeHolder="Search Song">
-                </ng-autocomplete>
-            </div>
-            <div class="search-btn">
-                <button class="btn btn-outline-success my-2 my-sm-0 search-btn" type="submit">Search</button>
-            </div>
+            <form>
+
+                <div class="search-btn">
+                    <ng-autocomplete [data]="listSong" [searchKeyword]="keyWordSong"
+                                     (selected)='redirectViewSong($event)'
+                                     (inputChanged)='onFocused($event)'
+                                     (inputFocused)='onFocused($event)'
+                                     [itemTemplate]="itemTemplateSinger"
+                                     [notFoundTemplate]="notFoundTemplateSinger"
+                                     placeHolder="Search Song">
+                    </ng-autocomplete>
+                </div>
+                <div class="search-btn">
+                    <button class="btn btn-outline-success
+                 my-2 my-sm-0 search-btn"
+                            type="submit"
+                    >Search
+                    </button>
+                </div>
+
+            </form>
             <ng-template #notFoundTemplateSinger let-notFound>
                 <!--                        <div [innerHTML]="notFound"+"dfdsgfd"></div>-->
                 <span><p style="height: 30px;color: #4907b4">No result! Try again</p></span>
