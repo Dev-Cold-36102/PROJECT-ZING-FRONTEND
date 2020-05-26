@@ -75,4 +75,17 @@ export class SongService {
         // @ts-ignore
         this.httpClient.post(this.url + 'api/delete', id).subscribe();
     }
+
+    timeConverter(timestamp: any) {
+        const time = new Date(timestamp);
+        // var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        // var year = a.getFullYear();
+        // var month = months[a.getMonth()];
+        // var date = a.getDate();
+        // var hour = a.getHours();
+        // var min = a.getMinutes();
+        // var sec = a.getSeconds();
+        // var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec;
+        return time;
+    }
 }

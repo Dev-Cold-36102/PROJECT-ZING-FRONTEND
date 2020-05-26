@@ -6,6 +6,7 @@ import {User} from '@app/JWT-ROLE/_models';
 import {AuthenticationService} from '@app/JWT-ROLE/_services';
 import {UpdateSongService} from '../../_service_not_authen/update-song.service';
 import {Router} from '@angular/router';
+import {SongViewDetail} from '../../_model/SongViewDetail';
 
 @Component({
     selector: 'app-list-song-owner',
@@ -36,7 +37,7 @@ export class ListSongOwnerComponent implements OnInit {
         });
     }
 
-    viewSong(song: Song) {
+    viewSong(song: SongViewDetail) {
         this.updateSong.setSong(song);
         this.route.navigate(['/edit-song']);
     }

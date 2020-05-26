@@ -2,7 +2,7 @@ import {FormControl} from '@angular/forms';
 import {FileUploader} from 'ng2-file-upload';
 
 export class SongViewDetail {
-    id?: number;
+    idSong?: number;
     nameSong: string;
     infoSong: string;
     imageSong: string;
@@ -16,5 +16,4 @@ export class SongViewDetail {
     category: string;
     singer: any;
     album: any;
-
 }
