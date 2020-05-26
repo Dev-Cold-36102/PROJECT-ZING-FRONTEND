@@ -100,9 +100,10 @@ export class CreateSongComponent implements OnInit {
         // console.log(song.get('linkSong'));
         this.httpClient.post(`${environment.apiUrl}/create-song`, song).subscribe((result) => {
             console.log('Thêm bai hat thành công');
-            // alert('ADD SUCCESS!');
+            alert('ADD SUCCESS!');
         }, (error) => {
             console.log('Gặp lỗi khi thêm song');
+            alert('gap loi khi them bai hat');
             console.error(error);
         });
     }
