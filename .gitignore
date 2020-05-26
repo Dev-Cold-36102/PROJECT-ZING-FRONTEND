@@ -40,6 +40,9 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
+.gitignore
+.idea
+
 
 # System Files
 .DS_Store
