@@ -1,15 +1,15 @@
 <div class="header">
-    <!---start-top-header--->
-    <div class="top-header">
-        <div class="top-header-left">
-            <ul>
-                <li class="active"><a routerLink="/">Home</a></li>
-                <li><a href="#">Specials</a></li>
-                <li><a href="#">Delivery</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </div>
-        <div class="top-header-right">
+  <!---start-top-header--->
+  <div class="top-header">
+    <div class="top-header-left">
+      <ul>
+        <li class="active"><a routerLink="/">Home</a></li>
+        <li><a href="#">Specials</a></li>
+        <li><a href="#">Delivery</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="top-header-right">
 
         </div>
         <div class="clear"></div>
@@ -73,7 +73,7 @@
             <li><a href="artists.html">Artists</a></li>
             <li><a href="specials.html">Specials</a></li>
             <li *ngIf="currentUser"><a href="specials.html">Recent-albums</a></li>
-            <li *ngIf="currentUser"><a routerLink="create-playlist">Create-playlist</a></li>
+            <li *ngIf="currentUser"><a routerLink="list-playlist">Playlist</a></li>
             <li *ngIf="currentUser"><a routerLink="create-song">Create Song</a></li>
             <li *ngIf="currentUser"><a routerLink="listsong-owner">My Song</a></li>
             <div class="clear"></div>

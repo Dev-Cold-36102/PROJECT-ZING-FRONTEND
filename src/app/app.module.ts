@@ -8,6 +8,7 @@ import {ShowMusicHotComponent} from './index/show-music-hot/show-music-hot.compo
 import {AlbumHotComponent} from './index/album-hot/album-hot.component';
 import {MusicNewComponent} from './index/music-new/music-new.component';
 import {FooterComponent} from './footer/footer.component';
+import {RouterModule, Routes} from '@angular/router';
 import {IndexComponent} from './index/index.component';
 import {SigninComponent} from './signin/signin.component';
 import {RegisterComponent} from './register/register.component';
@@ -16,16 +17,19 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {appRoutingModule} from './app.routing';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AutocompleteLibModule} from 'angular-ng-autocomplete';
+
+
 // import {JwPaginationComponent} from 'jw-angular-pagination';
-import {ErrorInterceptor, JwtInterceptor} from './JWT-ROLE/_helpers';
-import {CreateSongComponent} from './CRUDSong/create-song/create-song.component';
+import {JwtInterceptor, ErrorInterceptor} from './JWT-ROLE/_helpers';
+import {CreateSongComponent} from './create-song/create-song.component';
 import {TestAutocompleteComponent} from './test-autocomplete/test-autocomplete.component';
 import {NgxPaginationModule} from 'ngx-pagination';
-// import {ViewDetailSongComponent} from './';
-import {OverlayModule} from '@angular/cdk/overlay';
+import {CreateSongComponent} from './CRUDSong/create-song/create-song.component';
+import {CreatePlaylistComponent} from './create-playlist/create-playlist.component';
+import { ListPlaylistComponent} from './list-playlist/list-playlist.component';
+import { AddSongPlaylistComponent } from './add-song-playlist/add-song-playlist.component';
 import {EditSongComponent} from './CRUDSong/edit-song/edit-song.component';
 import {ListSongOwnerComponent} from './CRUDSong/list-song-owner/list-song-owner.component';
-
 
 @NgModule({
     declarations: [
@@ -41,10 +45,15 @@ import {ListSongOwnerComponent} from './CRUDSong/list-song-owner/list-song-owner
         RegisterComponent,
         // JwPaginationComponent,
         CreateSongComponent,
-        // ViewDetailSongComponent,
-        TestAutocompleteComponent,
-        EditSongComponent,
-        ListSongOwnerComponent],
+        CreatePlaylistComponent,
+        ListPlaylistComponent,
+        AddSongPlaylistComponent,
+        TestAutocompleteComponent
+    ],
+
+        CreateSongComponent,
+        ViewDetailSongComponent,
+        TestAutocompleteComponent],
 
     imports: [
         BrowserModule,

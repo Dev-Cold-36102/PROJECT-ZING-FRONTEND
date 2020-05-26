@@ -1,0 +1,48 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm">
+            <div class="card ">
+                <div class="card card-header">
+                    {{playlist.name}}
+                </div>
+                <div class="card card-body">
+                    <img src="{{srcImagePlaylist + playlist.image}}" alt="">
+                </div>
+                <div class="card card-footer">
+                    {{playlist.description}}
+                    <p  class="small" id="listen">Lượt nghe:  {{playlist.listen}}</p>
+                    <p class="small"> Lượt thích: {{playlist.likePlaylist}}</p>
+                    <p class="small"> Lượt download: {{playlist.download}}</p>
+                    <a type="button" class="btn btn-success">Nghe Playlist</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="card ">
+                <div class="card card-header">
+                    Danh sach bai hat
+                </div>
+                <div class="card card-body">
+                    <div class="products-box" *ngFor="let song of listSongInPlaylist" >
+                        <a routerLink="/view-song">{{song.nameSong}}</a> --
+                        <button class="btn-link" (click)="removeSongInPlaylist(this.song)">remove</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="card">
+                <div class="card card-header">
+                    Các bài Hát hot
+                </div>
+                <div class="card card-body">
+                    <div class="products-box" *ngFor="let song of songs">
+                        <input type="hidden" [value]="song.idSong"/>
+                        <a routerLink="/view-song" >{{song.nameSong}}</a> --
+                        <button class="btn-link" (click)="addSongInPlaylist(this.song)">add in playlist</button>
+                    </div>
+                </div>
+            </div>
+     </div>
+    </div>
+</div>
