@@ -8,6 +8,7 @@ import {ShowMusicHotComponent} from './index/show-music-hot/show-music-hot.compo
 import {AlbumHotComponent} from './index/album-hot/album-hot.component';
 import {MusicNewComponent} from './index/music-new/music-new.component';
 import {FooterComponent} from './footer/footer.component';
+import {RouterModule, Routes} from '@angular/router';
 import {IndexComponent} from './index/index.component';
 import {SigninComponent} from './signin/signin.component';
 import {RegisterComponent} from './register/register.component';
@@ -16,15 +17,14 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {appRoutingModule} from './app.routing';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AutocompleteLibModule} from 'angular-ng-autocomplete';
+
+
 // import {JwPaginationComponent} from 'jw-angular-pagination';
-import {ErrorInterceptor, JwtInterceptor} from './JWT-ROLE/_helpers';
-import {CreateSongComponent} from './CRUDSong/create-song/create-song.component';
+import {JwtInterceptor, ErrorInterceptor} from './JWT-ROLE/_helpers';
+import {CreateSongComponent} from './create-song/create-song.component';
 import {TestAutocompleteComponent} from './test-autocomplete/test-autocomplete.component';
-import {OverlayModule} from '@angular/cdk/overlay';
-import {EditSongComponent} from './CRUDSong/edit-song/edit-song.component';
-import {ListSongOwnerComponent} from './CRUDSong/list-song-owner/list-song-owner.component';
-
-
+import {NgxPaginationModule} from 'ngx-pagination';
+import {ViewDetailSongComponent} from './index/view-detail-song/view-detail-song.component';
 
 @NgModule({
     declarations: [
@@ -39,11 +39,10 @@ import {ListSongOwnerComponent} from './CRUDSong/list-song-owner/list-song-owner
         SigninComponent,
         RegisterComponent,
         // JwPaginationComponent,
-        CreateSongComponent
-        ,
-        TestAutocompleteComponent,
-        EditSongComponent,
-        ListSongOwnerComponent],
+        CreateSongComponent,
+        ViewDetailSongComponent,
+        TestAutocompleteComponent],
+
     imports: [
         BrowserModule,
         ReactiveFormsModule,
@@ -52,8 +51,8 @@ import {ListSongOwnerComponent} from './CRUDSong/list-song-owner/list-song-owner
         appRoutingModule,
         BrowserAnimationsModule,
         AutocompleteLibModule,
-        OverlayModule,
-        // AutocompleteLibModule
+        NgxPaginationModule,
+        AutocompleteLibModule
     ],
     providers: [
         {

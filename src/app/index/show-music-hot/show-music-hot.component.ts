@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Song} from '../../_service_not_authen/song';
+import {SongViewDetail} from '../../_model/SongViewDetail';
 
 @Component({
     selector: 'app-show-music-hot',
@@ -7,6 +8,9 @@ import {Song} from '../../_service_not_authen/song';
     styleUrls: ['./show-music-hot.component.css']
 })
 export class ShowMusicHotComponent implements OnInit {
+    paging = 1;
+    songDetail: SongViewDetail = null;
+
 
     constructor() {
     }
@@ -19,4 +23,9 @@ export class ShowMusicHotComponent implements OnInit {
     ngOnInit(): void {
     }
 
+    onViewSong(item: SongViewDetail) {
+        this.songDetail = item;
+        console.log(item);
+        console.log(this.songDetail.singer);
+    }
 }
