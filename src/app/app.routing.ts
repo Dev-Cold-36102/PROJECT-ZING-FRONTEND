@@ -1,13 +1,13 @@
-﻿import {Routes, RouterModule} from '@angular/router';
+﻿import {RouterModule, Routes} from '@angular/router';
 
 import {AuthGuard} from './JWT-ROLE/_helpers';
-import {Role} from './JWT-ROLE/_models';
 import {IndexComponent} from './index/index.component';
 import {RegisterComponent} from './register/register.component';
 import {SigninComponent} from './signin/signin.component';
-import {CreateSongComponent} from './create-song/create-song.component';
+import {CreateSongComponent} from './CRUDSong/create-song/create-song.component';
 import {TestAutocompleteComponent} from './test-autocomplete/test-autocomplete.component';
-import {ViewDetailSongComponent} from './index/view-detail-song/view-detail-song.component';
+import {ListSongOwnerComponent} from './CRUDSong/list-song-owner/list-song-owner.component';
+import {EditSongComponent} from './CRUDSong/edit-song/edit-song.component';
 
 const routes: Routes = [
     {
@@ -26,16 +26,20 @@ const routes: Routes = [
         component: SigninComponent
     },
     {
-        path: 'view-song',
-        component: ViewDetailSongComponent
-    },
-    {
         path: 'create-song',
         component: CreateSongComponent
     },
     {
+        path: 'listsong-owner',
+        component: ListSongOwnerComponent
+    },
+    {
         path: 'test-autocpmlete',
         component: TestAutocompleteComponent
+    },
+    {
+        path: 'edit-song',
+        component: EditSongComponent
     },
     // otherwise redirect to home
     {path: '**', redirectTo: ''}

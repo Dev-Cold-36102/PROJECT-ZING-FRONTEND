@@ -28,7 +28,6 @@ export class IndexComponent implements OnInit {
         this.songService.fetchListSongApi().subscribe(song => {
             this.songs = song;
             console.log('dang lay du lieu tu api');
-            console.log(song);
             this.hitSongs = song;
             this.hitSongs.sort((a, b) => {
                 console.log('sap xep');
@@ -44,7 +43,6 @@ export class IndexComponent implements OnInit {
     }
 
     searchSongByName() {
-        console.log(this.keyword);
         if (this.keyword === '') {
             this.songs = this.songService.getAllSongs();
         } else {
