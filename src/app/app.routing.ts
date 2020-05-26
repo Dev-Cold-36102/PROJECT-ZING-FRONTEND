@@ -11,6 +11,7 @@ import {ListPlaylistComponent} from './list-playlist/list-playlist.component';
 import {AddSongPlaylistComponent} from './add-song-playlist/add-song-playlist.component';
 import {ListSongOwnerComponent} from './CRUDSong/list-song-owner/list-song-owner.component';
 import {EditSongComponent} from './CRUDSong/edit-song/edit-song.component';
+import {ViewDetailSongComponent} from './index/view-detail-song/view-detail-song.component';
 
 const routes: Routes = [
     {
@@ -55,6 +56,10 @@ const routes: Routes = [
     {
         path: 'create-playlist',
         component: CreatePlaylistComponent
+    },
+    {
+        path: 'view-song',
+        component: ViewDetailSongComponent
     },
     // otherwise redirect to home
     {path: '**', redirectTo: ''}

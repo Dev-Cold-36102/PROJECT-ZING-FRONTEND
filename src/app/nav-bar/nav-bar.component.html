@@ -20,17 +20,10 @@
             <a routerLink="/"><img src="../../assets/other_image/logo.png" title="logo" alt="image"></a>
         </div>
 
-
-        <!--        <div class="sub-header-center" style="padding-left: 50px">-->
-        <!--                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
-        <!--                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
-        <!--        </div>-->
-
-
         <div class="ng-autocomplete search-bar">
             <div class="search-btn">
                 <ng-autocomplete [data]="listSong" [searchKeyword]="keyWordSong"
-                                 (selected)='redirectViewSong()'
+                                 (selected)='redirectViewSong($event)'
                                  (inputChanged)='onFocused($event)'
                                  (inputFocused)='onFocused($event)'
                                  [itemTemplate]="itemTemplateSinger"
