@@ -23,7 +23,9 @@ import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 import {JwtInterceptor, ErrorInterceptor} from './JWT-ROLE/_helpers';
 import {CreateSongComponent} from './create-song/create-song.component';
 import {TestAutocompleteComponent} from './test-autocomplete/test-autocomplete.component';
-
+import {CreatePlaylistComponent} from './create-playlist/create-playlist.component';
+import { ListPlaylistComponent} from './list-playlist/list-playlist.component';
+import { AddSongPlaylistComponent } from './add-song-playlist/add-song-playlist.component';
 
 @NgModule({
     declarations: [
@@ -38,9 +40,13 @@ import {TestAutocompleteComponent} from './test-autocomplete/test-autocomplete.c
         SigninComponent,
         RegisterComponent,
         // JwPaginationComponent,
-        CreateSongComponent
-        ,
-        TestAutocompleteComponent],
+        CreateSongComponent,
+        CreatePlaylistComponent,
+        ListPlaylistComponent,
+        AddSongPlaylistComponent,
+        TestAutocompleteComponent
+    ],
+
     imports: [
         BrowserModule,
         ReactiveFormsModule,

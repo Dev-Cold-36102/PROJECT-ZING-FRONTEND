@@ -7,6 +7,10 @@ import {RegisterComponent} from './register/register.component';
 import {SigninComponent} from './signin/signin.component';
 import {CreateSongComponent} from './create-song/create-song.component';
 import {TestAutocompleteComponent} from './test-autocomplete/test-autocomplete.component';
+import {CreatePlaylistComponent} from './create-playlist/create-playlist.component';
+import {ListPlaylistComponent} from './list-playlist/list-playlist.component';
+import {AddSongPlaylistComponent} from './add-song-playlist/add-song-playlist.component';
+import {Playlist} from './_model/Playlist';
 
 const routes: Routes = [
     {
@@ -31,6 +35,18 @@ const routes: Routes = [
     {
         path: 'test-autocpmlete',
         component: TestAutocompleteComponent
+    },
+    {
+        path: 'list-playlist',
+        component: ListPlaylistComponent
+    },
+    {
+        path: 'addSong-playlist',
+        component: AddSongPlaylistComponent
+    },
+    {
+        path: 'create-playlist',
+        component: CreatePlaylistComponent
     },
     // otherwise redirect to home
     {path: '**', redirectTo: ''}
