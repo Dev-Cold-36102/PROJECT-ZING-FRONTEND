@@ -8,8 +8,11 @@
       <div>
         <audio src="{{srcAudioSong+song.linkSong}}" controls style="width: 100%"></audio>
       </div>
-      <div class="button"><span><a href="singlepage.html">Read More</a></span></div>
-    </div>
+      <button type="button"
+              class="btn btn-info"
+              (click)="onViewSong(song)"
+      >Chi tiết
+      </button>    </div>
     <pagination-controls (pageChange)="p = $event"
                          style="float: left"></pagination-controls>
     <div class="clear"> </div>
