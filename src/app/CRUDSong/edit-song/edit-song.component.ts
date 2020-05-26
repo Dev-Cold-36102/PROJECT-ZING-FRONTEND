@@ -91,8 +91,6 @@ export class EditSongComponent implements OnInit {
     }
 
     onChangeAudio(event) {
-        // this.imageSong = event.target.files[0];
-        // console.log('dsfds');
         this.formSongData.append('linkSong', event.target.files[0]);
     }
 
