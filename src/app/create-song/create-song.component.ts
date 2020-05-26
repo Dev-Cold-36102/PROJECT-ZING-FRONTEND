@@ -1,11 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
-import {Song} from '../_model/Song';
 import {environment} from '@environments/environment';
-import { SongService } from '../_service_not_authen/song.service';
-import { Singer } from '../_model/Singer';
-import { Album } from '../_model/Album';
+import {Singer} from '../_model/Singer';
+import {SongService} from '../_service_not_authen/song.service';
+import {Album} from '../_model/Album';
 
 
 @Component({
@@ -14,6 +13,7 @@ import { Album } from '../_model/Album';
     styleUrls: ['./create-song.component.less']
 })
 export class CreateSongComponent implements OnInit {
+
 
     songForm: FormGroup;
     nameSong: string;
@@ -148,5 +148,6 @@ export class CreateSongComponent implements OnInit {
         console.log('focus0');
         // do something when input is focused
     }
+
 
 }

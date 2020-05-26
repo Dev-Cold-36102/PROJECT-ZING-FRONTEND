@@ -15,12 +15,16 @@ import {RegisterComponent} from './register/register.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {appRoutingModule} from './app.routing';
-// import {JwPaginationComponent} from 'jw-angular-pagination';
-import {JwtInterceptor, ErrorInterceptor} from './JWT-ROLE/_helpers';
-import {CreateSongComponent} from './create-song/create-song.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 
+
+// import {JwPaginationComponent} from 'jw-angular-pagination';
+import {JwtInterceptor, ErrorInterceptor} from './JWT-ROLE/_helpers';
+import {CreateSongComponent} from './create-song/create-song.component';
+import {TestAutocompleteComponent} from './test-autocomplete/test-autocomplete.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import {ViewDetailSongComponent} from './index/view-detail-song/view-detail-song.component';
 
 @NgModule({
     declarations: [
@@ -35,8 +39,10 @@ import {AutocompleteLibModule} from 'angular-ng-autocomplete';
         SigninComponent,
         RegisterComponent,
         // JwPaginationComponent,
-        CreateSongComponent
-    ],
+        CreateSongComponent,
+        ViewDetailSongComponent,
+        TestAutocompleteComponent],
+
     imports: [
         BrowserModule,
         ReactiveFormsModule,
@@ -44,6 +50,8 @@ import {AutocompleteLibModule} from 'angular-ng-autocomplete';
         HttpClientModule,
         appRoutingModule,
         BrowserAnimationsModule,
+        AutocompleteLibModule,
+        NgxPaginationModule,
         AutocompleteLibModule
     ],
     providers: [
@@ -52,6 +60,7 @@ import {AutocompleteLibModule} from 'angular-ng-autocomplete';
             JwtInterceptor, multi: true
         },
         {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+
     ],
     bootstrap: [AppComponent]
 })

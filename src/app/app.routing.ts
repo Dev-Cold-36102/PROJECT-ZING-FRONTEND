@@ -6,6 +6,8 @@ import {IndexComponent} from './index/index.component';
 import {RegisterComponent} from './register/register.component';
 import {SigninComponent} from './signin/signin.component';
 import {CreateSongComponent} from './create-song/create-song.component';
+import {TestAutocompleteComponent} from './test-autocomplete/test-autocomplete.component';
+import {ViewDetailSongComponent} from './index/view-detail-song/view-detail-song.component';
 
 const routes: Routes = [
     {
@@ -24,8 +26,16 @@ const routes: Routes = [
         component: SigninComponent
     },
     {
+        path: 'view-song',
+        component: ViewDetailSongComponent
+    },
+    {
         path: 'create-song',
         component: CreateSongComponent
+    },
+    {
+        path: 'test-autocpmlete',
+        component: TestAutocompleteComponent
     },
     // otherwise redirect to home
     {path: '**', redirectTo: ''}
