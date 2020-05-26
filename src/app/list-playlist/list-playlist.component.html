@@ -1,0 +1,18 @@
+<div class="container">
+    <a routerLink="/create-playlist" class="btn btn-success">Add playlist</a>
+    <hr>
+    <table class="table table-responsive">
+        <tr>
+            <th>Playlist</th>
+            <th>image</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <tr *ngFor="let playlist of playLists">
+            <td><a (click)="getPlaylistFrom(playlist)">{{playlist.name}}</a></td>
+            <td><a (click)="getPlaylistFrom(playlist)"><img src="{{srcImagePlaylist + playlist.image}}" width="20%" height="20%" alt=""></a></td>
+            <td><a routerLink="" class="btn btn-danger">Edit</a></td>
+            <td><button class="btn btn-danger" (click)="deletePlaylist(playlist)">Delete</button></td>
+        </tr>
+    </table>
+</div>
