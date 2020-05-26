@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/PROJECT-ZING-FRONTEND.iml" filepath="$PROJECT_DIR$/.idea/PROJECT-ZING-FRONTEND.iml" />
-    </modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Project-Zing.iml" filepath="$PROJECT_DIR$/.idea/Project-Zing.iml" />    </modules>
   </component>
 </project>

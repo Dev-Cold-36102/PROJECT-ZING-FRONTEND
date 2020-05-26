@@ -1,16 +1,14 @@
 ﻿import {Routes, RouterModule} from '@angular/router';
 
 import {AuthGuard} from './JWT-ROLE/_helpers';
-import {Role} from './JWT-ROLE/_models';
 import {IndexComponent} from './index/index.component';
 import {RegisterComponent} from './register/register.component';
 import {SigninComponent} from './signin/signin.component';
-import {CreateSongComponent} from './create-song/create-song.component';
+import {CreateSongComponent} from './CRUDSong/create-song/create-song.component';
 import {TestAutocompleteComponent} from './test-autocomplete/test-autocomplete.component';
 import {CreatePlaylistComponent} from './create-playlist/create-playlist.component';
 import {ListPlaylistComponent} from './list-playlist/list-playlist.component';
 import {AddSongPlaylistComponent} from './add-song-playlist/add-song-playlist.component';
-import {Playlist} from './_model/Playlist';
 import {ListSongOwnerComponent} from './CRUDSong/list-song-owner/list-song-owner.component';
 import {EditSongComponent} from './CRUDSong/edit-song/edit-song.component';
 

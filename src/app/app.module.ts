@@ -21,14 +21,14 @@ import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 
 // import {JwPaginationComponent} from 'jw-angular-pagination';
 import {JwtInterceptor, ErrorInterceptor} from './JWT-ROLE/_helpers';
-import {CreateSongComponent} from './create-song/create-song.component';
 import {TestAutocompleteComponent} from './test-autocomplete/test-autocomplete.component';
 import {NgxPaginationModule} from 'ngx-pagination';
-import {ViewDetailSongComponent} from './index/view-detail-song/view-detail-song.component';
 import {CreateSongComponent} from './CRUDSong/create-song/create-song.component';
 import {CreatePlaylistComponent} from './create-playlist/create-playlist.component';
 import { ListPlaylistComponent} from './list-playlist/list-playlist.component';
 import { AddSongPlaylistComponent } from './add-song-playlist/add-song-playlist.component';
+import {EditSongComponent} from './CRUDSong/edit-song/edit-song.component';
+import {ListSongOwnerComponent} from './CRUDSong/list-song-owner/list-song-owner.component';
 
 @NgModule({
     declarations: [
@@ -47,12 +47,12 @@ import { AddSongPlaylistComponent } from './add-song-playlist/add-song-playlist.
         CreatePlaylistComponent,
         ListPlaylistComponent,
         AddSongPlaylistComponent,
-        TestAutocompleteComponent
-    ],
-
+        TestAutocompleteComponent,
         CreateSongComponent,
-        ViewDetailSongComponent,
-        TestAutocompleteComponent],
+        TestAutocompleteComponent,
+        EditSongComponent,
+        ListSongOwnerComponent,
+    ],
 
     imports: [
         BrowserModule,
@@ -61,7 +61,8 @@ import { AddSongPlaylistComponent } from './add-song-playlist/add-song-playlist.
         HttpClientModule,
         appRoutingModule,
         BrowserAnimationsModule,
-        AutocompleteLibModule
+        AutocompleteLibModule,
+        NgxPaginationModule,
         // AutocompleteLibModule
     ],
     providers: [
