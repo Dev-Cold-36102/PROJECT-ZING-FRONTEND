@@ -21,10 +21,10 @@ import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 
 // import {JwPaginationComponent} from 'jw-angular-pagination';
 import {JwtInterceptor, ErrorInterceptor} from './JWT-ROLE/_helpers';
-import {CreateSongComponent} from './create-song/create-song.component';
 import {TestAutocompleteComponent} from './test-autocomplete/test-autocomplete.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {ViewDetailSongComponent} from './index/view-detail-song/view-detail-song.component';
+import {CreateSongComponent} from './CRUDSong/create-song/create-song.component';
 
 @NgModule({
     declarations: [
