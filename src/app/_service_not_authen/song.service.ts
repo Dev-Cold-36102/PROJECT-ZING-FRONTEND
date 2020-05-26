@@ -44,6 +44,10 @@ export class SongService {
         return this.httpClient.get<Song[]>(this.url + 'api/songs');
     }
 
+    fetchListSongUsersApi(idUser: number) {
+        return this.httpClient.post<Song[]>(this.url + 'user-song', idUser);
+    }
+
     getAllSongs() {
         console.log('b');
         return this.songs;

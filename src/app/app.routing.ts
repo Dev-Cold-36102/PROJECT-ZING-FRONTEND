@@ -11,6 +11,8 @@ import {CreatePlaylistComponent} from './create-playlist/create-playlist.compone
 import {ListPlaylistComponent} from './list-playlist/list-playlist.component';
 import {AddSongPlaylistComponent} from './add-song-playlist/add-song-playlist.component';
 import {Playlist} from './_model/Playlist';
+import {ListSongOwnerComponent} from './CRUDSong/list-song-owner/list-song-owner.component';
+import {EditSongComponent} from './CRUDSong/edit-song/edit-song.component';
 
 const routes: Routes = [
     {
@@ -33,8 +35,16 @@ const routes: Routes = [
         component: CreateSongComponent
     },
     {
+        path: 'listsong-owner',
+        component: ListSongOwnerComponent
+    },
+    {
         path: 'test-autocpmlete',
         component: TestAutocompleteComponent
+    },
+    {
+        path: 'edit-song',
+        component: EditSongComponent
     },
     {
         path: 'list-playlist',

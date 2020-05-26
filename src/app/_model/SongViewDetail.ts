@@ -1,4 +1,7 @@
-export class Song {
+import {FormControl} from '@angular/forms';
+import {FileUploader} from 'ng2-file-upload';
+
+export class SongViewDetail {
     id?: number;
     nameSong: string;
     infoSong: string;
@@ -11,6 +14,7 @@ export class Song {
     author: string;
     linkSong: string;
     category: string;
-    idSinger: number;
-    idAlbum: number;
+    singer: any;
+    album: any;
+
 }

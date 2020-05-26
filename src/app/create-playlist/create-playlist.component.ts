@@ -85,4 +85,6 @@ export class CreatePlaylistComponent implements OnInit {
     this.formPlaylistData.append('image', event.target.files[0]);
   }
 
+
+
 }

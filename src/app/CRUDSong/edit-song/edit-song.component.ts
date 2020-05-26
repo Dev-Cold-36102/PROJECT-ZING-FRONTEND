@@ -1,61 +1,67 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {User} from '@app/JWT-ROLE/_models';
 import {HttpClient} from '@angular/common/http';
-import {Song} from '../_model/Song';
+import {SongService} from '../../_service_not_authen/song.service';
+import {AuthenticationService} from '@app/JWT-ROLE/_services';
+import {Song} from '../../_service_not_authen/song';
+import {UpdateSongService} from '../../_service_not_authen/update-song.service';
+import {Singer} from '../../_model/Singer';
+import {Album} from '../../_model/Album';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {environment} from '@environments/environment';
-import {Singer} from '../_model/Singer';
-import {SongService} from '../_service_not_authen/song.service';
-import {Album} from '../_model/Album';
-
 
 @Component({
-    selector: 'app-create-song',
-    templateUrl: './create-song.component.html',
-    styleUrls: ['./create-song.component.less']
+    selector: 'app-edit-song',
+    templateUrl: './edit-song.component.html',
+    styleUrls: ['./edit-song.component.less']
 })
-export class CreateSongComponent implements OnInit {
+export class EditSongComponent implements OnInit {
 
-
+    currentUser: User;
     songForm: FormGroup;
     nameSong: string;
     keywordSinger = 'nameSinger';
     keywordAlbum = 'nameAlbum';
+    songEdit: Song;
     srcImageSinger = 'assets/images/singer/';
     srcAlbum = 'assets/images/album/';
-
-
-    // imageSong: any = File;
+    isCannotCreate = true;
     formSongData: FormData;
     listSinger: Singer[] = [];
     listSingerName: string[] = [];
     listAlbum: Album[] = [];
-    isLoadingResult: boolean;
 
-
-    constructor(private httpClient: HttpClient, private songService: SongService) {
+    constructor(private  httpClient: HttpClient, private songService: SongService, private authenticationService: AuthenticationService,
+                private updateSongService: UpdateSongService) {
+        this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
     }
 
     ngOnInit() {
+        this.getSong();
         this.getAllSinger();
         this.getAllAlbum();
+        this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
 
-        console.log(this.listSingerName);
         this.songForm = new FormGroup({
-            nameSong: new FormControl('name'),
-            infoSong: new FormControl('name'),
+            nameSong: new FormControl(this.songEdit.nameSong, Validators.required),
+            infoSong: new FormControl(this.songEdit.infoSong, Validators.required),
             imageSong: new FormControl(),
-            dateSong: new FormControl(new Date()),
-            likeSong: new FormControl(0),
-            listenSong: new FormControl(0),
-            downloadSong: new FormControl(0),
-            commendSong: new FormControl(0),
-            category: new FormControl('name'),
-            author: new FormControl('name'),
-            linkSong: new FormControl(),
-            singer: new FormControl(),
-            album: new FormControl(),
+            dateSong: new FormControl(this.songEdit.dateSong, Validators.required),
+            likeSong: new FormControl(this.songEdit.likeSong, Validators.required),
+            listenSong: new FormControl(this.songEdit.listenSong, Validators.required),
+            downloadSong: new FormControl(this.songEdit.downloadSong, Validators.required),
+            commendSong: new FormControl(this.songEdit.commendSong, Validators.required),
+            category: new FormControl(this.songEdit.category, Validators.required),
+            author: new FormControl(this.songEdit.author, Validators.required),
+            linkSong: new FormControl(this.songEdit.linkSong, Validators.required),
+            singer: new FormControl(this.songEdit.idSinger, Validators.required),
+            album: new FormControl(this.songEdit.idAlbum, Validators.required),
         });
         this.formSongData = new FormData();
+    }
+
+    getSong() {
+        this.updateSongService.getSong().subscribe(song => this.songEdit = song);
     }
 
     submit() {
@@ -72,6 +78,7 @@ export class CreateSongComponent implements OnInit {
         this.formSongData.append('author', song.author);
         this.formSongData.append('singer', song.singer.nameSinger);
         this.formSongData.append('album', song.album.nameAlbum);
+        this.formSongData.append('idUser', this.currentUser.id.toString());
         // console.log(song.imageSong.value);
 
         this.creatSong(this.formSongData);
@@ -84,8 +91,6 @@ export class CreateSongComponent implements OnInit {
     }
 
     onChangeAudio(event) {
-        // this.imageSong = event.target.files[0];
-        // console.log('dsfds');
         this.formSongData.append('linkSong', event.target.files[0]);
     }
 
@@ -120,21 +125,33 @@ export class CreateSongComponent implements OnInit {
         // do something with selected item
     }
 
-    onChangeSearch(val: string) {
-        // fetch remote data from here
-        // And reassign the 'data' which is binded to 'data' property.
+    onChangeSearchSinger(val: string) {
+        // this.checkCanCreate();
     }
+
+    onChangeSearchAlbum(val: string) {
+        // this.checkCanCreate();
+
+    }
+
+    checkCanCreate() {
+        // console.log(this.songForm.value.singer);
+        const singer: any = this.songForm.value.singer;
+        const album: any = this.songForm.value.album;
+
+
+        if (this.listAlbum.includes(album) && this.listSinger.includes(singer)) {
+            this.isCannotCreate = false;
+
+        } else {
+            this.isCannotCreate = true;
+        }
+    }
+
 
     onFocused(e) {
+        console.log('focus0');
         // do something when input is focused
     }
-
-    // showSinger() {
-    //     console.log('value:' + this.nameSinger);
-    // }
-    //
-    // showAlbum() {
-    //     console.log('value:' + this.nameAlbum);
-    // }
 
 }

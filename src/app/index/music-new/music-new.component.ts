@@ -2,19 +2,22 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Song} from '../../_service_not_authen/song';
 
 @Component({
-  selector: 'app-music-new',
-  templateUrl: './music-new.component.html',
-  styleUrls: ['./music-new.component.css']
+    selector: 'app-music-new',
+    templateUrl: './music-new.component.html',
+    styleUrls: ['./music-new.component.css']
 })
 export class MusicNewComponent implements OnInit {
+    p = 1;
 
-  constructor() { }
-  @Input() songNew: Song [];
+    constructor() {
+    }
 
-  srcImageSong = 'assets/images/song/';
-  srcAudioSong = 'assets/mp3Link/';
+    @Input() songNew: Song [];
 
-  ngOnInit(): void {
-  }
+    srcImageSong = 'assets/images/song/';
+    srcAudioSong = 'assets/mp3Link/';
+
+    ngOnInit(): void {
+    }
 
 }
