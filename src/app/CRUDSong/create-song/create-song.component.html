@@ -1,8 +1,10 @@
 <br>
 <br>
 <br>
+
 <div class="ngContainer" class="form-create">
     <div class="card">
+        <h3 style="color: red">{{message}}</h3>
         <h4 class="card-header">Create New Song</h4>
         <div class="card-body">
             <form [formGroup]="songForm" (ngSubmit)="submit()">
@@ -57,8 +59,9 @@
                                      class="singer-input">
                     </ng-autocomplete>
                     <ng-template #notFoundTemplateSinger let-notFound>
-<!--                        <div [innerHTML]="notFound"+"dfdsgfd"></div>-->
-                        <span><p style="height: 30px;color: #4907b4">No result! Create new Singer   <a routerLink="/" style="color: red"><b>here</b></a></p></span>
+                        <!--                        <div [innerHTML]="notFound"+"dfdsgfd"></div>-->
+                        <span><p style="height: 30px;color: #4907b4">No result! Create new Singer   <a routerLink="/"
+                                                                                                       style="color: red"><b>here</b></a></p></span>
                     </ng-template>
                     <ng-template #itemTemplateSinger let-item>
                         <a href="javascript:void(0)">
@@ -75,11 +78,12 @@
                                      [itemTemplate]="itemTemplateAlbum"
                                      [notFoundTemplate]="notFoundTemplateAlbum"
                                      placeHolder="Select or create new album"
-                                     formControlName="album" >
+                                     formControlName="album">
                     </ng-autocomplete>
                     <ng-template #notFoundTemplateAlbum let-notFound>
-<!--                        <div [innerHTML]="notFound"></div>-->
-                        <span><p style="height: 30px;color: #4907b4">No result! Create new album   <a routerLink="/" style="color: red"><b>here</b></a></p></span>
+                        <!--                        <div [innerHTML]="notFound"></div>-->
+                        <span><p style="height: 30px;color: #4907b4">No result! Create new album   <a routerLink="/"
+                                                                                                      style="color: red"><b>here</b></a></p></span>
                     </ng-template>
 
                     <ng-template #itemTemplateAlbum let-item>

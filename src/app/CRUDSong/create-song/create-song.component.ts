@@ -34,17 +34,20 @@ export class CreateSongComponent implements OnInit {
 
     currentUser: User;
 
+    message = '';
+
 
     constructor(private httpClient: HttpClient, private songService: SongService, private authenticationService: AuthenticationService) {
+        // this.message = '';
         this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
 
     }
 
     ngOnInit() {
+        // this.message = '';
         this.getAllSinger();
         this.getAllAlbum();
         this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
-
         console.log(this.listSingerName);
         this.songForm = new FormGroup({
             nameSong: new FormControl('', Validators.required),
@@ -81,8 +84,8 @@ export class CreateSongComponent implements OnInit {
         this.formSongData.append('idUser', this.currentUser.id.toString());
         // console.log(song.imageSong.value);
 
+        console.log(song.dateSong);
         this.creatSong(this.formSongData);
-        // window.location.reload();
 
     }
 
@@ -99,11 +102,15 @@ export class CreateSongComponent implements OnInit {
     creatSong(song: any) {
         // console.log(song.get('linkSong'));
         this.httpClient.post(`${environment.apiUrl}/create-song`, song).subscribe((result) => {
-            console.log('Thêm bai hat thành công');
+            console.log('Thêm bai hat thành công (=^_^=)');
+            this.message = 'Add song success! (=^_^=)';
+            alert(this.message);
             // alert('ADD SUCCESS!');
         }, (error) => {
+            this.message = 'Add song unsuccess! (-_-) !';
             console.log('Gặp lỗi khi thêm song');
             console.error(error);
+            alert(this.message);
         });
     }
 
