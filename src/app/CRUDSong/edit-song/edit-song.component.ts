@@ -3,12 +3,13 @@ import {User} from '@app/JWT-ROLE/_models';
 import {HttpClient} from '@angular/common/http';
 import {SongService} from '../../_service_not_authen/song.service';
 import {AuthenticationService} from '@app/JWT-ROLE/_services';
-import {Song} from '../../_service_not_authen/song';
 import {UpdateSongService} from '../../_service_not_authen/update-song.service';
 import {Singer} from '../../_model/Singer';
 import {Album} from '../../_model/Album';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {environment} from '@environments/environment';
+import {SongViewDetail} from '../../_model/SongViewDetail';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-edit-song',
@@ -22,7 +23,7 @@ export class EditSongComponent implements OnInit {
     nameSong: string;
     keywordSinger = 'nameSinger';
     keywordAlbum = 'nameAlbum';
-    songEdit: Song;
+    songEdit: SongViewDetail;
     srcImageSinger = 'assets/images/singer/';
     srcAlbum = 'assets/images/album/';
     isCannotCreate = true;
@@ -31,8 +32,12 @@ export class EditSongComponent implements OnInit {
     listSingerName: string[] = [];
     listAlbum: Album[] = [];
 
+    timeSong: Date;
+    message = '';
+    idSong = '';
+
     constructor(private  httpClient: HttpClient, private songService: SongService, private authenticationService: AuthenticationService,
-                private updateSongService: UpdateSongService) {
+                private updateSongService: UpdateSongService, private route: Router) {
         this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
     }
 
@@ -40,13 +45,14 @@ export class EditSongComponent implements OnInit {
         this.getSong();
         this.getAllSinger();
         this.getAllAlbum();
+        // this.checkCanCreate();
         this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
 
         this.songForm = new FormGroup({
             nameSong: new FormControl(this.songEdit.nameSong, Validators.required),
             infoSong: new FormControl(this.songEdit.infoSong, Validators.required),
             imageSong: new FormControl(),
-            dateSong: new FormControl(this.songEdit.dateSong, Validators.required),
+            dateSong: new FormControl(Validators.required),
             likeSong: new FormControl(this.songEdit.likeSong, Validators.required),
             listenSong: new FormControl(this.songEdit.listenSong, Validators.required),
             downloadSong: new FormControl(this.songEdit.downloadSong, Validators.required),
@@ -54,19 +60,23 @@ export class EditSongComponent implements OnInit {
             category: new FormControl(this.songEdit.category, Validators.required),
             author: new FormControl(this.songEdit.author, Validators.required),
             linkSong: new FormControl(this.songEdit.linkSong, Validators.required),
-            singer: new FormControl(this.songEdit.idSinger, Validators.required),
-            album: new FormControl(this.songEdit.idAlbum, Validators.required),
+            singer: new FormControl(this.songEdit.singer.nameSinger, Validators.required),
+            album: new FormControl(this.songEdit.album.nameAlbum, Validators.required),
         });
         this.formSongData = new FormData();
     }
 
     getSong() {
-        this.updateSongService.getSong().subscribe(song => this.songEdit = song);
+        this.updateSongService.getSong().subscribe(song => {
+            this.songEdit = song;
+            this.idSong = song.idSong.toString();
+        });
     }
 
     submit() {
         const song: any = this.songForm.value;
         // console.log(song.nameSong);
+
         this.formSongData.append('nameSong', song.nameSong);
         this.formSongData.append('infoSong', song.infoSong);
         this.formSongData.append('dateSong', song.dateSong);
@@ -79,9 +89,9 @@ export class EditSongComponent implements OnInit {
         this.formSongData.append('singer', song.singer.nameSinger);
         this.formSongData.append('album', song.album.nameAlbum);
         this.formSongData.append('idUser', this.currentUser.id.toString());
-        // console.log(song.imageSong.value);
+        this.formSongData.append('idSong', this.songEdit.idSong.toString());
 
-        this.creatSong(this.formSongData);
+        this.saveSong(this.formSongData);
         // window.location.reload();
 
     }
@@ -94,14 +104,17 @@ export class EditSongComponent implements OnInit {
         this.formSongData.append('linkSong', event.target.files[0]);
     }
 
-    creatSong(song: any) {
-        // console.log(song.get('linkSong'));
-        this.httpClient.post(`${environment.apiUrl}/create-song`, song).subscribe((result) => {
-            console.log('Thêm bai hat thành công');
+    saveSong(song: any) {
+        this.httpClient.post(`${environment.apiUrl}/edit-song`, song).subscribe((result) => {
+            console.log('Sửa bai hat thành công');
+            this.message = 'Edit success! (=^_^=)';
+            alert(this.message);
             // alert('ADD SUCCESS!');
         }, (error) => {
-            console.log('Gặp lỗi khi thêm song');
+            console.log('Gặp lỗi khi sửa song');
             console.error(error);
+            this.message = 'Edit unsuccess! (-_-)';
+            alert(this.message);
         });
     }
 
@@ -139,7 +152,6 @@ export class EditSongComponent implements OnInit {
         const singer: any = this.songForm.value.singer;
         const album: any = this.songForm.value.album;
 
-
         if (this.listAlbum.includes(album) && this.listSinger.includes(singer)) {
             this.isCannotCreate = false;
 
@@ -152,6 +164,27 @@ export class EditSongComponent implements OnInit {
     onFocused(e) {
         console.log('focus0');
         // do something when input is focused
+    }
+
+    deleteSong() {
+        this.httpClient.post(`${environment.apiUrl}/delete-song`, this.idSong).subscribe((result) => {
+            console.log('xoa bai hat thành công');
+            this.message = 'Delete success! (=^_^=)';
+            alert(this.message);
+            this.route.navigate(['/listsong-owner']);
+            // alert('ADD SUCCESS!');
+        }, (error) => {
+            console.log('Gặp lỗi khi xoa song');
+            console.error(error);
+            this.message = 'Delete unsuccess! (-_-)';
+            alert(this.message);
+        });
+    }
+
+    submitDelete() {
+        if (confirm('Are you sure?')) {
+            this.deleteSong();
+        }
     }
 
 }

@@ -1,0 +1,35 @@
+<br>
+<br>
+<form *ngIf="songDetail" style="background-color: #b8daff">
+    <br>
+        <div class="container">
+            <br>
+            <h5 class="align-content-center" style="color: blueviolet"><span>DETAIL SONG</span></h5>
+            <br>
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <img src="{{srcImageSong+songDetail.imageSong}}" alt="image" width="500">
+                <br>
+                <br>
+                <audio src="{{srcAudioSong+songDetail.linkSong}}" controls style="width: 100%"></audio>
+            </div>
+
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <div>
+                    <h3>Tên bài hát: {{songDetail.nameSong}} </h3>
+                    <h3>Tác giả: {{songDetail.author}} </h3>
+                    <h3>Thể loại: {{songDetail.category}} </h3>
+                    <h3>Lượt tải về: {{songDetail.downloadSong}} </h3>
+                    <h3>Lượt like: {{songDetail.likeSong}} </h3>
+                    <h3>Ca sĩ: {{songDetail.singer.nameSinger}} </h3>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+<br>
+</form>
+<br>
+<br>

@@ -1,5 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Song} from '../../_service_not_authen/song';
+import {Router} from '@angular/router';
+import {environment} from '@environments/environment';
+import {SongViewDetail} from '../../_model/SongViewDetail';
+import {ViewDetailSongService} from '../../_service_not_authen/view-detail-song.service';
 
 @Component({
     selector: 'app-music-new',
@@ -9,15 +13,22 @@ import {Song} from '../../_service_not_authen/song';
 export class MusicNewComponent implements OnInit {
     p = 1;
 
-    constructor() {
+    constructor(private viewDetailSongService: ViewDetailSongService, private router: Router) {
     }
 
     @Input() songNew: Song [];
 
-    srcImageSong = 'assets/images/song/';
-    srcAudioSong = 'assets/mp3Link/';
+    // srcImageSong = 'assets/images/song/';
+    // srcAudioSong = 'assets/mp3Link/';
+    srcImageSong = environment.srcImageSong;
+    srcAudioSong = environment.srcAudioSong;
 
     ngOnInit(): void {
     }
+    onViewSong(item: SongViewDetail) {
+        this.viewDetailSongService.setSong(item);
+        this.router.navigate(['/view-song']);
+    }
+
 
 }

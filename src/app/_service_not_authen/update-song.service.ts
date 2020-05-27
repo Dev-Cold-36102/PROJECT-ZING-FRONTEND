@@ -1,13 +1,14 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
 import {Song} from './song';
+import {SongViewDetail} from '../_model/SongViewDetail';
 
 @Injectable({
     providedIn: 'root'
 })
 export class UpdateSongService {
-    song: BehaviorSubject<Song> = new BehaviorSubject<Song>(new class implements Song {
-        id?: number;
+    song: BehaviorSubject<SongViewDetail> = new BehaviorSubject<SongViewDetail>(new class implements SongViewDetail {
+        idSong: number;
         nameSong: string;
         infoSong: string;
         imageSong: string;
@@ -19,8 +20,8 @@ export class UpdateSongService {
         author: string;
         linkSong: string;
         category: string;
-        idSinger: number;
-        idAlbum: number;
+        singer: any;
+        album: any;
     }());
 
     constructor() {
@@ -30,7 +31,7 @@ export class UpdateSongService {
         return this.song;
     }
 
-    setSong(song: Song) {
+    setSong(song: SongViewDetail) {
         this.song.next(song);
     }
 }
