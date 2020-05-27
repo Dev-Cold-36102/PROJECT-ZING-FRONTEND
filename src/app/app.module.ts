@@ -23,6 +23,7 @@ import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 import {JwtInterceptor, ErrorInterceptor} from './JWT-ROLE/_helpers';
 import {TestAutocompleteComponent} from './test-autocomplete/test-autocomplete.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+// @ts-ignore
 import {ViewDetailSongComponent} from './index/view-detail-song/view-detail-song.component';
 import {CreateSongComponent} from './CRUDSong/create-song/create-song.component';
 

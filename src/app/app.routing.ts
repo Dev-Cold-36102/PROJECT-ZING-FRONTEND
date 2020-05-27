@@ -8,6 +8,7 @@ import {CreateSongComponent} from './CRUDSong/create-song/create-song.component'
 import {TestAutocompleteComponent} from './test-autocomplete/test-autocomplete.component';
 import {ListSongOwnerComponent} from './CRUDSong/list-song-owner/list-song-owner.component';
 import {EditSongComponent} from './CRUDSong/edit-song/edit-song.component';
+import { PlaylistComponent } from './playlist/playlist.component';
 
 const routes: Routes = [
     {
@@ -42,7 +43,11 @@ const routes: Routes = [
         component: EditSongComponent
     },
     // otherwise redirect to home
-    {path: '**', redirectTo: ''}
+    {path: '**', redirectTo: ''},
+    {
+        path: 'edit-playlist',
+        component: PlaylistComponent
+    }
 ];
 
 export const appRoutingModule = RouterModule.forRoot(routes);
