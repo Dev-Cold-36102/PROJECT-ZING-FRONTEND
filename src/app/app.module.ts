@@ -26,6 +26,11 @@ import {NgxPaginationModule} from 'ngx-pagination';
 // @ts-ignore
 import {ViewDetailSongComponent} from './index/view-detail-song/view-detail-song.component';
 import {CreateSongComponent} from './CRUDSong/create-song/create-song.component';
+import { PlaylistComponent } from './playlist/playlist.component';
+
+const routesConfig: Routes = [
+    {path: 'edit-playlist', component: PlaylistComponent},
+];
 
 @NgModule({
     declarations: [
@@ -53,7 +58,8 @@ import {CreateSongComponent} from './CRUDSong/create-song/create-song.component'
         BrowserAnimationsModule,
         AutocompleteLibModule,
         NgxPaginationModule,
-        AutocompleteLibModule
+        AutocompleteLibModule,
+        RouterModule.forRoot(routesConfig)
     ],
     providers: [
         {
