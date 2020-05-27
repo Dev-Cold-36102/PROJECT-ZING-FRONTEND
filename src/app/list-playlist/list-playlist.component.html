@@ -11,8 +11,8 @@
         <tr *ngFor="let playlist of playLists">
             <td><a (click)="getPlaylistFrom(playlist)">{{playlist.name}}</a></td>
             <td><a (click)="getPlaylistFrom(playlist)"><img src="{{srcImagePlaylist + playlist.image}}" width="20%" height="20%" alt=""></a></td>
-            <td><a routerLink="" class="btn btn-danger">Edit</a></td>
-            <td><button class="btn btn-danger" (click)="deletePlaylist(playlist)">Delete</button></td>
+            <td><a routerLink="/edit-playlist" class="btn btn-danger">Edit</a></td>
+            <td><button class="btn btn-danger" (click)="delete(playlist.id)">Delete</button></td>
         </tr>
     </table>
 </div>
